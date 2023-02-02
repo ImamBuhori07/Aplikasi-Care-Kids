@@ -1,30 +1,61 @@
-<nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background-color: #3C6BC6;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="../../../assets/img/uv 1.svg" width="150px" class="ml-5" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto ">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" routerLink="Beranda">Beranda</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Postingan</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" routerLink="Berita">Berita</a></li>
-              <li><a class="dropdown-item" routerLink="DaftarKehilanganAnak">Daftar Anak Hilang</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" routerLink="Edukasi">Edukasi</a></li>
+<body>
+    <div id="container">
+        <div class="header">
+        </div>
+        <div class="navigation shadow">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo"><a routerLink="beranda">CareKids</a></label>
+            <ul>
+                <li><a routerLink="beranda">Beranda</a></li>
+                <li class=""><a>Postingan</a>
+                    <ul class="dropdown">
+                        <li><a routerLink="news">Berita</a></li>
+                        <li><a routerLink="">Info Anak Hilang</a></li>
+                        <li><a routerLink="">Edukasi</a></li>
+                    </ul>
+                </li>
+                <li><a routerLink="education">Pesan</a></li>
+                <a class="nav-link" href="#"><img src="../../../assets/img/Foto Profil.svg" class="Profil" width="40px" alt=""></a>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="Pesan">Pesan</a>
-          </li>
-          <a class="nav-link" href="#"><img src="../../../assets/img/Foto Profil.svg" class="FotoProfil" width="35px" alt=""></a>
-        </ul>
-      </div>
+        </div>
     </div>
-  </nav>
+
+
+     <!-- Main-Content -->
+
+     <section class="main-content">
+        <div class="main">
+          <h2 class="mr-3">Selamat Datang <br> Hesky Ramadhan</h2>
+          <span class="Statistik">Statistik</span>
+        </div>
+        <div class="kotak1">
+          <div class="Pengunjung">
+            <i class="bi bi-person-fill"></i>
+          Pengunjung
+         </div>
+         <h5>0</h5>
+        </div>
+        <div class="kotak2">
+          <div class="Komentar">
+            <i class="bi bi-chat-square-fill"></i>
+          Komentar
+          </div>
+          <h5 class="i">0</h5>
+      </div>
+      <div class="kotak3">
+         <div class="Pesan">
+          <i class="bi bi-chat-fill"></i>
+          Pesan
+         </div>
+         <h5 class="o">0</h5>
+      </div>
+      </section>
+  
+      <div class="bulat"></div>
+      <div class="kotak"></div>
+  
+      <!-- Akhir main-content -->
+</body>
