@@ -1,0 +1,106 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #33ccff 0%, #ff99cc 100%);
+    font-family: 'Numans', sans-serif;
+}
+
+.user_card {
+    height: 320px;
+    width: 300px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #dcd2f6;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+}
+
+.brand_logo_container {
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    top: -50px;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+.brand_logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.form_container {
+    margin-top: 100px;
+}
+
+.login_btn {
+    width: 100%;
+    background: #2266dc !important;
+    color: white !important;
+}
+
+.login_btn:hover {
+    background: orange !important;
+    color: rgb(5, 5, 5) !important;
+}
+
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.login_container {
+    padding: 0 2rem;
+}
+
+.input-group-text {
+    background: #2266dc !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem;
+    width: 35px;
+    height: 38px;
+}
+
+.user_card>.mt-4 {
+    margin-top: 10px !important;
+}
+
+.user_card>.mt-4 a {
+    color: #0c61f4;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .user_card {
+        height: 350px;
+        width: 300px;
+    }
+
+    .brand_logo_container {
+        height: 170px;
+        width: 170px;
+        top: -45px;
+    }
+
+    .brand_logo {
+        height: 170px;
+        width: 170px;
+    }
+
+    .form_container {
+        margin-top: 120px;
+    }
+}
