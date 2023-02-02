@@ -1,0 +1,149 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-item {
+    font-size: 21px;
+    margin-right: 70px;
+    margin-left: -30px;
+    justify-items: left;
+}
+
+.nav-item a {
+    color: #FAFAFA;
+}
+
+.nav-item:hover::after {
+    content: '';
+    display: block;
+    border-bottom: 3px solid  #FAFAFA;
+    width: 80%;
+    margin: auto;
+}
+
+.nav-item:hover {
+    color: #FAFAFA;
+}
+
+.FotoProfil {
+    margin-right: 20px;
+}
+
+.main {
+    height: 100vh;
+}
+
+
+h2 {
+    color: black;
+    position: absolute;
+    font-size: 35px;
+    font-weight: bold;
+    top: 90px;
+    margin-left: 80px;
+    text-align: center;
+}
+
+.Statistik {
+    color: black;
+    position: absolute;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    top: 240px ;
+    margin-left: 90px;
+}
+
+h5 {
+    position: absolute;
+    color: #fafafa;
+    font-size: 42px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+h5.i {
+    left: 12px;
+}
+
+h5.o {
+    left: 15px;
+}
+.Pengunjung {
+    margin-top: 60px;
+    margin-right: 130px;
+    }
+
+.Komentar {
+    margin-top: 60px;
+    margin-right: 120px;
+}
+
+.Pesan {
+    margin-top: 60px;
+    margin-right: 155px;
+}
+
+.Pengunjung,.Pesan,.Komentar {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    color: #fafafa;
+    text-align: center;
+}
+
+.kotak1,.kotak2,.kotak3 {
+    position: absolute;
+    width: 306px;
+    height: 182px;
+    background: #3C6BC6;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.icon {
+    position: absolute;
+    margin-top: -40px;
+}
+
+.kotak1 {
+    left: 72px;
+    top: 280px;
+}
+.kotak2 {
+    left: 398px;
+    top: 280px;
+}
+.kotak3 {
+    left: 724px;
+    top: 280px;
+}
+
+.kotak {
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+}
+
+.bulat {
+    height: 100%;
+    border-top-left-radius: 80%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #3C6BC6;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+p {
+    margin-top: 7px;
+}
+
+.footer {
+    z-index: 9999;
+}
+
