@@ -5,6 +5,9 @@ import { UserRoutingModule } from './user-routing.module';
 import { BerandaComponent } from './beranda/beranda.component';
 import { UserComponent } from './user.component';
 import { NewsComponent } from './news/news.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
+import { EducationComponent } from './education/education.component';
 
 
 
@@ -13,6 +16,9 @@ import { NewsComponent } from './news/news.component';
     BerandaComponent,
     UserComponent,
     NewsComponent,
+    ContactComponent,
+    AboutComponent,
+    EducationComponent,
   ],
   imports: [
     CommonModule,

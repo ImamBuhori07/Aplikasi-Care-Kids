@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './user.component';
+
+//Pages
 import { BerandaComponent } from './beranda/beranda.component';
 import { NewsComponent } from './news/news.component';
+
+import { EducationComponent } from './education/education.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   {
@@ -21,6 +27,19 @@ const routes: Routes = [
       {
         path: 'news',
         component: NewsComponent
+      },
+
+      {
+        path: 'education',
+        component: EducationComponent
+      },
+      {
+        path: 'about',
+        component: AboutComponent
+      },
+      {
+        path: 'contact',
+        component: ContactComponent
       },
     ]
   },

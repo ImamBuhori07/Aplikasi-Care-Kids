@@ -1,0 +1,153 @@
+.container {
+    padding: 0;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.row>div {
+    flex: 1 1 350px;
+    margin: 0px;
+}
+
+.row>.logo {
+    flex: 1 1 350px;
+    margin: 0px;
+    height: 100%;
+    transition: 0.4s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo>h3 {
+    font-weight: bold;
+    font-weight: 600;
+    color: #202020;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.logo>img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-top: -20px;
+}
+
+.row>.content {
+    flex: 1 1 350px;
+    margin: 20px 0px;
+    height: 100%;
+}
+
+.content>h4 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #202020;
+    text-align: center;
+    padding: 20px;
+}
+.content h5 {
+    font-weight: bold;
+    color: #202020;
+    text-align: justify;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 10px;
+}
+
+.content>p {
+    font-size: 20px;
+    color: #070707;
+    line-height: 20px;
+    text-align: justify;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.content>p>a {
+    color: #0000EE;
+    text-decoration: none;
+}
+
+.row>.card {
+    height: 240px;
+    /* margin-left: 80px;
+    margin-right: 80px; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: rgb(157, 118, 118);
+    transition: 0.4s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.row>.card:hover {
+    height: 470px;
+    transform: scale(1.05);
+}
+
+.card div>img {
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+.card .top-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: #202020;
+    text-align: center;
+}
+
+.card .bottom-text {
+    padding: 0 20px 10px 20px;
+    margin-top: 5px;
+    background: #ebe2e2;
+    opacity: 0;
+    transition: 0.1s;
+    visibility: hidden;
+}
+
+.card:hover .bottom-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card .bottom-text .text {
+    text-align: justify;
+}
+
+.card .bottom-text .btn {
+    margin: 10px 0px;
+    text-align: left;
+}
+
+.card .bottom-text .btn>a {
+    background: #0000EE;
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    display: inline-flex;
+    transition: 0, 2S;
+}
+
+.card .bottom-text .btn>a:hover {
+    transform: scale(0.9);
+}
+
