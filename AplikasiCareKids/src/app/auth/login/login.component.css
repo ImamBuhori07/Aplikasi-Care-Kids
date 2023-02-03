@@ -4,7 +4,6 @@ html {
     padding: 0;
     height: 100vh;
     background: linear-gradient(to bottom right, #33ccff 0%, #ff99cc 100%);
-    font-family: 'Numans', sans-serif;
 }
 
 .user_card {
