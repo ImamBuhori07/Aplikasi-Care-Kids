@@ -4,7 +4,7 @@ html {
     padding: 0;
     height: 100vh;
     background: linear-gradient(to bottom right, #33ccff 0%, #ff99cc 100%);
-    font-family: numans, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .user_card {
