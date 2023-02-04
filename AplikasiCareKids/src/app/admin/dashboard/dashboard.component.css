@@ -1,0 +1,57 @@
+h2 {
+    position: absolute;
+    margin-top: 60px;
+    margin-left: -72px;
+}
+
+p {
+    position: absolute;
+    margin-top: 205px;
+    margin-left: -72px;
+
+}
+
+h4 {
+    position: absolute;
+    margin-top: 65px;
+    margin-left: 20px;
+
+}
+
+#icon {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#angka {
+    position: absolute;
+    margin-top: 114px;
+    margin-left: 20px;
+}
+
+.kotak1,.kotak2,.kotak3 {
+  
+    border-radius: 20px;
+    background: #3C6BC6;
+    position: absolute;
+    width: 306px;
+    height: 182px;
+    margin-left: -28px;
+    
+}
+
+.kotak1 {
+    left: 72px;
+    top: 349px;
+}
+
+.kotak2 {
+    left: 398px;
+    top: 349px;
+}
+
+.kotak3 {
+    left: 724px;
+    top: 349px;
+}
