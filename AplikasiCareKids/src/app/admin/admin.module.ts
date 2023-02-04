@@ -7,6 +7,7 @@ import { BeritaComponent } from './berita/berita.component';
 import { InfoanakhilangComponent } from './infoanakhilang/infoanakhilang.component';
 import { EdukasiComponent } from './edukasi/edukasi.component';
 import { PesanComponent } from './pesan/pesan.component';
+import { AdminComponent } from './admin.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { PesanComponent } from './pesan/pesan.component';
     InfoanakhilangComponent,
     EdukasiComponent,
     PesanComponent,
+    AdminComponent,
   ],
   imports: [
     CommonModule,
