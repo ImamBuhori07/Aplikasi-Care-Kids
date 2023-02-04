@@ -1,0 +1,52 @@
+<body>
+
+    <div id="container m-auto">
+        <div class="header">
+        </div>
+        <div class="navigation shadow">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo"><a routerLink="beranda">CareKids</a></label>
+            <ul>
+                <li><a routerLink="beranda">Beranda</a></li>
+                <li class=""><a>Postingan</a>
+                    <ul class="dropdown">
+                        <li><a routerLink="news">Berita</a></li>
+                        <li><a routerLink="">Info Anak Hilang</a></li>
+                        <li><a routerLink="">Edukasi</a></li>
+                    </ul>
+                </li>
+                <li><a routerLink="education">Pesan</a></li>
+                <!-- <a class="nav-link" href="#"><img src="../../../assets/img/Foto Profil.svg" class="profil" width="40px" alt=""></a> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+            </ul>
+        </div>
+    </div>
+
+<!-- Akhir Navigasi Bar -->
+
+<router-outlet></router-outlet>
+
+<!-- Footer -->
+
+  <!-- <div class="footer">
+    <div class="row">
+        <p class="copyright">Copyright &copy; 2023 All Rights Reserved by <a
+            routerLink="beranda">CareKids</a>
+        </p>
+    </div>
+</div> -->
+
+<!-- Akhir Footer -->
+</body> 
