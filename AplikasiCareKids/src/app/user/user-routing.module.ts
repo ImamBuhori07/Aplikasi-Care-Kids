@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserComponent } from './user.component';
+
 
 //Pages
+import { UserComponent } from './user.component';
 import { BerandaComponent } from './beranda/beranda.component';
-import { NewsComponent } from './news/news.component';
-
-import { EducationComponent } from './education/education.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
@@ -26,12 +24,12 @@ const routes: Routes = [
       },
       {
         path: 'news',
-        component: NewsComponent
+        loadChildren: () => import('./news/news.module').then(m => m.NewsModule)
       },
 
       {
         path: 'education',
-        component: EducationComponent
+        loadChildren: () => import('./education/education.module').then(m => m.EducationModule)
       },
       {
         path: 'about',
@@ -41,6 +39,7 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent
       },
+
     ]
   },
 ];
