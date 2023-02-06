@@ -17,7 +17,7 @@ import { EducationComponent } from './education/education.component';
     NewsComponent,
     ContactComponent,
     AboutComponent,
-    EducationComponent,
+    EducationComponent
   ],
   imports: [
     CommonModule,
