@@ -3,7 +3,7 @@ const PROXY_CONFIG = [
       context:[
         "/api"
       ],
-      target: "https://www.mockachino.com",
+      target: "http://127.0.0.1:8000",
       pathRewrite : {
       "^/api" : "/9570b439-6f80-49"
       },
