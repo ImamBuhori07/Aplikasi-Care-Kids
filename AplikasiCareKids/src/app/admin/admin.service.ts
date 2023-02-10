@@ -10,6 +10,9 @@ import { response } from 'express';
   providedIn: 'root'
 })
 export class AdminService {
+  category() {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http: HttpClient) { }
 
