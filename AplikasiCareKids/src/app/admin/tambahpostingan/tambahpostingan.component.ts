@@ -15,25 +15,25 @@ export class TambahpostinganComponent implements OnInit{
   ){}  
   
   ngOnInit(): void {
-      this.getCategory()
+      // this.getCategory()
   }
 
-  getCategory(){
-    this._Adminservice.category().subscribe(response: => {
-      this.getCategory = response ["category"]
-      console.log(this.getCategory)
-    })
-  }
+  // getCategory(){
+  //   this._Adminservice.category().subscribe(response: => {
+  //     this.getCategory = response ["category"]
+  //     console.log(this.getCategory)
+  //   })
+  // }
 
-    deletecategory(name_category : string){
-      this._Adminservice.deletecategory(name_category).subscribe(response => {
-        if(Response.status == 200){
-          alert("Berhasil Hapus Category")
-          location.reload()
-        }else {
-          alert("Gagal menghapus Category")
-        }
-      })
-    }
+    // deletecategory(name_category : string){
+    //   this._Adminservice.deletecategory(name_category).subscribe(response => {
+    //     if(Response.status == 200){
+    //       alert("Berhasil Hapus Category")
+    //       location.reload()
+    //     }else {
+    //       alert("Gagal menghapus Category")
+    //     }
+    //   })
+    // }
   }
 
