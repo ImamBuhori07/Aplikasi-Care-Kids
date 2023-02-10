@@ -49,11 +49,11 @@ table {
     position: absolute;
     width: 1100px;
     margin-top: 290px;
-    background: #3C6BC6;
+ 
 
 }
 
-button {
+button#add {
     position: absolute;
     border-radius: 10px;
     margin-top: 175px;

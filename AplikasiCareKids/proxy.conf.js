@@ -4,9 +4,6 @@ const PROXY_CONFIG = [
         "/api"
       ],
       target: "http://127.0.0.1:8000",
-      pathRewrite : {
-      "^/api" : "/9570b439-6f80-49"
-      },
       changeOrigin : true,
       secure : false
     }
