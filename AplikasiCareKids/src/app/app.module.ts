@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { Observable } from 'rxjs';
 
-
+//my modules
+import { moduleMe } from './user/modules/modules';
+import { ContactService } from './user/services/contact.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,10 +17,11 @@ import { Observable } from 'rxjs';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    RouterModule,
     FormsModule,
-    RouterModule
+    moduleMe
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
