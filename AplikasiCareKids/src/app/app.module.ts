@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TambahpostinganComponent } from './tambahpostingan/tambahpostingan.component';
 
+//my modules
+import { moduleMe } from './user/modules/modules';
+import { HttpClientModule } from '@angular/common/http';
+import { ContactService } from './user/services/contact.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,9 +16,11 @@ import { TambahpostinganComponent } from './tambahpostingan/tambahpostingan.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    moduleMe
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

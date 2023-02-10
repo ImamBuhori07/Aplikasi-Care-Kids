@@ -1,17 +1,25 @@
 <section class="mb-3 mt-3">
     <h3 class="h1-responsive font-weight-bold text-center my-4">Hubungi Kami</h3>
     <p class="text-center w-responsive mx-auto mb-3">Apakah Anda memiliki pertanyaan? <br> Tolong jangan ragu untuk menghubungi kami
-    secara langsung.<br>Tim kami akan kembali kepada Anda dalam hitungan jam untuk membantu Anda.</p>
+    secara langsung.<br>Tim kami akan membalas pesan anda secepatnya</p>
 
     <div class="row">
         <div class="col-md-9 mb-md-0 mb-0">
-            <form id="contact-form" name="contact-form" action="" method="POST">
+            <form [formGroup]="contactForm" id="contact-form" name="contact-form" (ngSubmit)="onSubmit(postForm.value)" #postForm="ngForm">
+
+                <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Berhasil !</strong> Pesan anda telah terkirim.
+                    <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
 
                 <div class="row">
                     <div class="col-md-12">
                         <div class="md-form mb-0">
                             <label for="name" class="">NAMA LENGKAP</label>
-                            <input type="text" id="name" name="name" class="form-control"  placeholder="Masukan Nama Lengkap Anda *" >
+                            <input type="text"  name="nama" formControlName="nama" class="form-control"  placeholder="Masukan Nama Lengkap Anda *" >
+                            <span *ngIf="contactForm.controls.nama.invalid && (contactForm.controls.nama.dirty || contactForm.controls.nama.touched)" class="text-danger">
+                                Nama Lengkap harus diisi
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -20,13 +28,19 @@
                     <div class="col-md-6">
                         <div class="md-form mb-0">
                             <label for="email" class="">EMAIL</label>
-                            <input type="text" id="email" name="email" class="form-control" placeholder="Masukan Email Anda *">
+                            <input type="text"  name="email" formControlName="email" class="form-control" placeholder="Masukan Email Anda *">
+                            <span *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)" class="text-danger">
+                                Email harus diisi
+                            </span>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="md-form mb-0">
                             <label for="phone" class="">NO TELEPON</label>
-                            <input type="text" id="phone" name="phone" class="form-control" placeholder="Masukan Nomor Telepon Anda *">
+                            <input type="text"   name="phone" formControlName="phone" class="form-control" placeholder="Masukan Nomor Telepon Anda *">
+                            <span *ngIf="contactForm.controls.phone.invalid && (contactForm.controls.phone.dirty || contactForm.controls.phone.touched)" class="text-danger">
+                                Nomor Telepon harus diisi
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -35,31 +49,36 @@
                     <div class="col-md-12">
                         <div class="md-form">
                             <label for="message">PESAN</label>
-                            <textarea type="text" id="message" name="message" rows="7"
+                            <textarea type="text" name="pesan" formControlName="pesan" rows="5"
                                 class="form-control md-textarea" placeholder="Masukan Pesan Anda *"></textarea>
+                            <span *ngIf="contactForm.controls.pesan.invalid && (contactForm.controls.pesan.dirty || contactForm.controls.pesan.touched)" class="text-danger">
+                                Pesan harus diisi
+                            </span>
                         </div>
                     </div>
                 </div>
+                <div class="text-center text-md-left mt-2">
+                    <button [disabled]="contactForm.invalid" class="btn" type="submit">Kirim</button>
+                </div>
             </form>
-            <div class="text-center text-md-left mt-2">
-                <a class="btn" onclick="document.getElementById('contact-form').submit();">Kirim</a>
-            </div>
             <div class="status"></div>
         </div>
 
+        <div class="col-md-3 mt-4 text-center" *ngFor="let data of setting">
+            <ul class="list-unstyled" >
         <div class="col-md-3 mt-3 text-center">
             <ul class="list-unstyled">
                 <li class="title-call">
-                    <p>Jam Operasional<br>Senin - Jum'at 09.00-16.00 WIB</p>
+                    <p>Jam Operasional<br>{{ data.waktu }}</p>
                 </li>
-                <li><i class="bi bi-telephone mt-0 fa-2x" aria-hidden="true"></i>
-                    <p>Telepon<br>+62 800000000</p>
+                <li><i class="bi bi-telephone mt-0 fa-2x"></i>
+                    <p>Telepon<br>{{ data.tlp }}</p>
                 </li>
                 <li><i class="bi bi-whatsapp  mt-0 fa-2x"></i>
-                    <p>Whatsapp<br>+62 800000000</p>
+                    <p>Whatsapp<br>{{ data.tlp }}</p>
                 </li>
                 <li><i class="bi bi-envelope mt-0 fa-2x"></i>
-                    <p>Email<br>Ade@mail.com</p>
+                    <p>Email<br>{{ data.email }}</p>
                 </li>
             </ul>
         </div>

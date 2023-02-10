@@ -34,155 +34,48 @@
                 <p>Artikel Terbaru</p>
             </div>
             <div class="card-deck">
-                <div class="card" routerLink="/education/detail">
+                <div class="card" routerLink="/education/detail/{{ data.id }}" *ngFor="let data of education | paginate: { itemsPerPage: 6, currentPage: page }">
                     <div class="blog-image">
-                        <img src="..\assets\images\thumbnail\Screenshot 2023-01-04 120836.png">
+                        <img src="{{ data.thumbnail }}">
                     </div>
                     <div class="blog-content">
-                        <div class="blog-title">Learning Web Design</div>
-                        <p class="blog-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor
-                            incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor
-                            incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor
-                            incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam. <a routerLink="/education/detail">Read More</a></p>
+                        <div class="blog-title">{{ data.title }}</div>
+                        <p class="blog-desc">{{ data.description }} <a routerLink="/education/detail">Read More</a></p>
                         <div class="blog-footer">
                             <div class="blog-avatar"><img src="..\assets\images\profile\pp.jpg"></div>
                             <div>
-                                <span class="blog-author">Ade Haryanto</span>
+                                <span class="blog-author">{{ data.author }}</span>
                                 <div class="blog-post">
-                                    <span><i class="fa fa-clock-o"></i> Feb 02 2023</span>
-                                    <span class="blog-comment"><i class="fa fa-comments"></i> 35 comments</span>
+                                    <span><i class="fa fa-clock-o"></i> {{ data.created_at }}</span>
                                 </div>
                             </div>
-                            <button class="btn btn-sm"><i class="fa fa-share-alt"></i></button>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="blog-image">
-                        <img src="..\assets\images\thumbnail\Screenshot 2023-01-04 120836.png">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-title">Learning Web Design</div>
-                        <p class="blog-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor
-                            incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam. <a href="#">Read More</a></p>
-                        <div class="blog-footer">
-                            <div class="blog-avatar"><img src="..\assets\images\profile\pp.jpg"></div>
-                            <div>
-                                <span class="blog-author">Ade Haryanto</span>
-                                <div class="blog-post">
-                                    <span><i class="fa fa-clock-o"></i> Feb 02 2023</span>
-                                    <span class="blog-comment"><i class="fa fa-comments"></i> 35 comments</span>
-                                </div>
-                            </div>
-                            <button class="btn btn-sm"><i class="fa fa-share-alt"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="blog-image">
-                        <img src="..\assets\images\thumbnail\Screenshot 2023-01-04 120836.png">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-title">Learning Web Design</div>
-                        <p class="blog-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor
-                            incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam. <a href="#">Read More</a></p>
-                        <div class="blog-footer">
-                            <div class="blog-avatar"><img src="..\assets\images\profile\pp.jpg"></div>
-                            <div>
-                                <span class="blog-author">Ade Haryanto</span>
-                                <div class="blog-post">
-                                    <span><i class="fa fa-clock-o"></i> Feb 02 2023</span>
-                                    <span class="blog-comment"><i class="fa fa-comments"></i> 35 comments</span>
-                                </div>
-                            </div>
-                            <button class="btn btn-sm"><i class="fa fa-share-alt"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-
+            </div>
+            <div>
+                <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
             </div>
 
             <div class="title-home">
                 <p>Berita Terbaru</p>
             </div>
             <div class="card-deck">
-                <div class="card">
+                <div class="card" routerLink="/news/detail/{{ data.id }}" *ngFor="let data of news">
                     <div class="blog-image">
-                        <img src="..\assets\images\thumbnail\Screenshot 2023-01-04 120836.png">
+                        <img src="{{ data.thumbnail }}">
                     </div>
                     <div class="blog-content">
-                        <div class="blog-title">Learning Web Design</div>
-                        <p class="blog-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor
-                            incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam. <a href="#">Read More</a></p>
+                        <div class="blog-title">{{ data.title }}</div>
+                        <p class="blog-desc">{{ data.description }} <a href="#">Read More</a></p>
                         <div class="blog-footer">
                             <div class="blog-avatar"><img src="..\assets\images\profile\pp.jpg"></div>
                             <div>
-                                <span class="blog-author">Ade Haryanto</span>
+                                <span class="blog-author">{{ data.author }}</span>
                                 <div class="blog-post">
-                                    <span><i class="fa fa-clock-o"></i> Feb 02 2023</span>
-                                    <span class="blog-comment"><i class="fa fa-comments"></i> 35 comments</span>
+                                    <span><i class="fa fa-clock-o"></i>{{ data.created_at }}</span>
                                 </div>
                             </div>
-                            <button class="btn btn-sm"><i class="fa fa-share-alt"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="blog-image">
-                        <img src="..\assets\images\thumbnail\Screenshot 2023-01-04 120836.png">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-title">Learning Web Design</div>
-                        <p class="blog-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor
-                            incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam. <a href="#">Read More</a></p>
-                        <div class="blog-footer">
-                            <div class="blog-avatar"><img src="..\assets\images\profile\pp.jpg"></div>
-                            <div>
-                                <span class="blog-author">Ade Haryanto</span>
-                                <div class="blog-post">
-                                    <span><i class="fa fa-clock-o"></i> Feb 02 2023</span>
-                                    <span class="blog-comment"><i class="fa fa-comments"></i> 35 comments</span>
-                                </div>
-                            </div>
-                            <button class="btn btn-sm"><i class="fa fa-share-alt"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="blog-image">
-                        <img src="..\assets\images\thumbnail\Screenshot 2023-01-04 120836.png">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-title">Learning Web Design</div>
-                        <p class="blog-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor
-                            incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam. <a href="#">Read More</a></p>
-                        <div class="blog-footer">
-                            <div class="blog-avatar"><img src="..\assets\images\profile\pp.jpg"></div>
-                            <div>
-                                <span class="blog-author">Ade Haryanto</span>
-                                <div class="blog-post">
-                                    <span><i class="fa fa-clock-o"></i> Feb 02 2023</span>
-                                    <span class="blog-comment"><i class="fa fa-comments"></i> 35 comments</span>
-                                </div>
-                            </div>
-                            <button class="btn btn-sm"><i class="fa fa-share-alt"></i></button>
                         </div>
                     </div>
                 </div>
@@ -217,7 +110,7 @@
             </div>
             <div class="card-about">
                 <div class="img">
-                    <img class="card-about-img-center" src="/assets/images/profile/pp.jpg"
+                    <img class="card-about-img-center" src="../assets/images/thumbnail/img.png"
                         alt="profile">
                 </div>
                 <div class="card-body">
