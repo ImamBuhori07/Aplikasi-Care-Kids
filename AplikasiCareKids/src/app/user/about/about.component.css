@@ -7,7 +7,7 @@
 .row {
     display: flex;
     justify-content: space-between;
-    background-color:#fff;
+    background-color: #fff;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -37,7 +37,7 @@
     margin-right: auto;
 }
 
-.content{
+.content {
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -82,7 +82,7 @@
 
 /* card */
 .card {
-    display:flex;
+    display: flex;
     background-color: #fff;
     padding: 10px;
     border-radius: 5px;
@@ -92,7 +92,7 @@
     transition: 0.5s ease;
     margin-right: 5px;
     float: left;
-    width: 257px;
+    width: 303px;
     align-items: center;
 }
 
