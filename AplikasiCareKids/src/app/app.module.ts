@@ -5,12 +5,9 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { Observable } from 'rxjs';
-
 
 //my modules
 import { moduleMe } from './user/modules/modules';
-import { HttpClientModule } from '@angular/common/http';
 import { ContactService } from './user/services/contact.service';
 @NgModule({
   declarations: [
@@ -18,7 +15,11 @@ import { ContactService } from './user/services/contact.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    RouterModule,
+    FormsModule,
+    moduleMe
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]
