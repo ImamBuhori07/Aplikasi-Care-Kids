@@ -1,50 +1,21 @@
-<div class="card-work">
+<div class="card-work" *ngFor="let data of news">
     <div class="header">
-        <div class="card-title">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur</div>
+        <div class="card-title">{{ data.title }}</div>
     </div>
     <div class="card-date">
-        <div class="date">Feb 04 2023</div>
-        <div class="author">By : Ade Haryanto</div>
+        <div class="date">{{ data.created_at }}</div>
+        <div class="author">By : {{ data.author }}</div>
     </div>
     <div class="img-section">
-        <img src="assets/images/thumbnail/Screenshot 2023-01-04 120836.png" alt="image" class="img-thumbnail">
+        <img src="{{ data.thumbnail }}" alt="image" class="img-thumbnail">
     </div>
     <div class="card-desc">
         <div class="card-content">
-            <p class="content" style="text-indent: 45px;">Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's standard
-                dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-                a type specimen
-                book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                essentially
-                unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                passages, and more
-                recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            <p class="content" style="text-indent: 45px;">Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry.
-                Lorem Ipsum has been the industry's standard
-                dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-                a type
-                specimen
-                book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                essentially
-                unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                passages, and
-                more
-                recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p class="content" style="text-indent: 45px;">{{ data.content }}</p>
         </div>
         <div class="img-gallery">
             <div class="img-gallery-item">
-                <img src="assets/images/thumbnail/Screenshot 2023-01-04 120836.png" alt="image" class="img-thumbnail">
-            </div>
-            <div class="img-gallery-item">
-                <img src="assets/images/thumbnail/Screenshot 2023-01-04 120836.png" alt="image" class="img-thumbnail">
-            </div>
-            <div class="img-gallery-item">
-                <img src="assets/images/thumbnail/Screenshot 2023-01-04 120836.png" alt="image" class="img-thumbnail">
-            </div>
-            <div class="img-gallery-item">
-                <img src="assets/images/thumbnail/Screenshot 2023-01-04 120836.png" alt="image" class="img-thumbnail">
+                <img src="{{ data.images }}" alt="image" class="img-thumbnail">
             </div>
         </div>
     </div>

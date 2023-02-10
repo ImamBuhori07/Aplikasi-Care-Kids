@@ -154,6 +154,10 @@
     color: black;
 }
 
+.my-pagination ::ng-deep .ngx-pagination .current {
+    background: #3C6BC6;
+}
+
 @media screen and (max-width: 768px) {
     .title-home {
         display: flex;

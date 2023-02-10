@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
+//services
+import { moduleMe } from '../modules/modules';
+
 //pages
 import { HomeComponent } from './home/home.component';
 import { DetailNewsComponent } from './detail-news/detail-news.component';
@@ -22,7 +25,7 @@ const routes: Routes = [
                 component: HomeComponent
             },
             {
-                path: 'detail',
+                path: 'detail/:id',
                 component: DetailNewsComponent
             },
         ]
@@ -37,6 +40,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    moduleMe
   ]
 })
 export class NewsModule { }
