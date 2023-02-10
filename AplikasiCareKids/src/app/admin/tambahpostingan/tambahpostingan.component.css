@@ -1,0 +1,83 @@
+
+/* .main {
+} */
+
+.kotak {
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 65px;
+}
+
+.kotak2 {
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px solid black ;
+    width: 250px;
+    height: 230px;
+    margin-left: 900px;
+    margin-top: 100px;
+}
+
+#addpost {
+        background-color: transparent;
+        position: absolute;
+        margin-top: 100px;
+        margin-left: 100px;
+}
+
+input {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    margin-top: 65px;
+    margin-left: 100px;
+}
+
+.bi {
+    margin-top: 107px;
+    margin-left: 550px;
+}
+
+label.satu{
+    position: absolute;
+    margin-top: 30px;
+    margin-left: -27px;
+}
+label.dua{
+    position: absolute;
+    margin-top: 110px;
+    margin-left: -20px;
+}
+
+#writer {
+    position: absolute;
+    border-radius: 10px;
+    margin-left: -100px;
+    border: 1px solid black;
+}
+
+#rise {
+    position: absolute;
+    border-radius: 10px;
+    margin-top: 140px;
+    margin-left: -100px;
+    border: 1px solid black;
+}
+
+.upload {
+    position: absolute;
+    width: 200px;
+    height: 33px;
+    margin-top: 350px;
+    margin-left: 925px;
+}
+
+.draft {
+    position: absolute;
+    width: 200px;
+    height: 33px;
+    margin-left: 925px;
+    margin-top: 400px;
+    
+}
+
