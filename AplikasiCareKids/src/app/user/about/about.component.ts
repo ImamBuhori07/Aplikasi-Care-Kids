@@ -13,6 +13,7 @@ export class AboutComponent {
   constructor(private aboutData: AboutService) {
     this.aboutData.getAbout().subscribe((res: any) => {
       this.about = res.data;
+      console.warn(res);
     });
   }
 }
