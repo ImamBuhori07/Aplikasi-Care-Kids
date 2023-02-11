@@ -30,6 +30,7 @@
     </div>
     <div class="row">
         <div class="col-8">
+            <div>
             <div class="title-home">
                 <p>Artikel Terbaru</p>
             </div>
@@ -53,15 +54,12 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
-            </div>
 
             <div class="title-home">
                 <p>Berita Terbaru</p>
             </div>
             <div class="card-deck">
-                <div class="card" routerLink="/news/detail/{{ data.id }}" *ngFor="let data of news">
+                <div class="card" routerLink="/news/detail/{{ data.id }}" *ngFor="let data of news | paginate: { itemsPerPage: 6, currentPage: page }">
                     <div class="blog-image">
                         <img src="{{ data.thumbnail }}">
                     </div>
@@ -80,15 +78,19 @@
                     </div>
                 </div>
             </div>
+            </div>
+            <div>
+                <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+            </div>
         </div>
         <div class="col-3">
             <div class="title-home">
                 <p>Artikel Teratas</p>
             </div>
-            <div class="top-article">
+            <div class="top-article" *ngFor="let data of beranda">
                 <ul class="list-group">
                     <li class="list-group-item ">
-                        <a class="" routerLink="">Cras justo odio</a>
+                        <a class="" routerLink="">{{ data.title }}</a>
                     </li>
                     <li class="list-group-item ">
                         <a class="" routerLink="">Cras justo odio</a>
@@ -108,16 +110,14 @@
             <div class="title-home mt-3">
                 <p> Tentang Kami</p>
             </div>
-            <div class="card-about">
+            <div class="card-about" *ngFor="let data of about">
                 <div class="img">
                     <img class="card-about-img-center" src="../assets/images/thumbnail/img.png"
                         alt="profile">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">CareKids</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        content. This card has even longer content than the first to show that equal height action.</p>
+                    <p class="card-text">{{ data.visi }}</p>
                 </div>
             </div>
         </div>
