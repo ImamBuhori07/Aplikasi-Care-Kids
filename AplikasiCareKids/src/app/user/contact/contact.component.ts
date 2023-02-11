@@ -33,7 +33,6 @@ export class ContactComponent {
 
   onSubmit(contactForm: Contact) {
     this.Data.postContact(contactForm).subscribe((res: any) => {
-      console.log(res);
       this.alert = true;
       this.contactForm.reset();
     })
