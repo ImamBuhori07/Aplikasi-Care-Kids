@@ -22,7 +22,8 @@
     <div class="card-comment">
         <h4>Komentar</h4>
         <div class="form">
-            <form action="" id="" #commnetsForm="ngForm" (ngSubmit)="getCommentForm(commnetsForm.value)">
+            <!-- #commnetsForm="ngForm" (ngSubmit)="getCommentForm(commnetsForm.value)" -->
+            <form action="" id="" >
                 <label for="name" class="comment-name">Nama :</label>
                 <input type="text" ngModel id="name" name="name" class="form-control" placeholder="Masukan Nama Lengkap Anda *">
                 <label for="message" class="comment-message">Pesan</label>
@@ -31,7 +32,8 @@
             </form>
         </div>
     </div>
-    <div class="card-comment" *ngFor="let data of education ">
+    <!-- *ngFor="let data of education " -->
+    <div class="card-comment">
         <div class="comment">
             <div class="comment-name-out">
                 <h5>{{ data.name }}</h5>
