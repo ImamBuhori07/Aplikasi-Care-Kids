@@ -25,6 +25,7 @@
     "express": "^4.18.2",
     "jquery": "^3.6.3",
     "jsonwebtoken": "^9.0.0",
+    "ngx-cookie-service": "^15.0.0",
     "rxjs": "~7.5.0",
     "save": "^2.9.0",
     "tslib": "^2.3.0",
