@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { MyinterceptorInterceptor } from './myinterceptor.interceptor';
 
 
+
 //my modules
 import { moduleMe } from './user/modules/modules';
 import { ContactService } from './user/services/contact.service';
@@ -23,7 +24,7 @@ import { ContactService } from './user/services/contact.service';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [
     {
