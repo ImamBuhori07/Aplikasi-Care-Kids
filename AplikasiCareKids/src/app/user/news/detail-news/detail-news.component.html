@@ -1,4 +1,4 @@
-<div class="card-work" *ngFor="let data of news">
+<div class="card-work" *ngFor="let data of news ">
     <div class="header">
         <div class="card-title">{{ data.title }}</div>
     </div>
@@ -13,32 +13,6 @@
         <div class="card-content">
             <p class="content" style="text-indent: 45px;">{{ data.content }}</p>
         </div>
-        <div class="img-gallery">
-            <div class="img-gallery-item">
-                <img src="{{ data.images }}" alt="image" class="img-thumbnail">
-            </div>
-        </div>
+        <news-images></news-images>
     </div>
-    <div class="card-comment">
-        <h4>Komentar</h4>
-        <div class="form">
-            <form action="" id="">
-                <label for="name" class="comment-name">Nama :</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Masukan Nama Lengkap Anda *">
-                <label for="message" class="comment-message">Pesan</label>
-                <textarea name="message" id="message" cols="110" rows="3" class="form-control"
-                    placeholder="Masukan Pesan Anda *"></textarea>
-                <button type="submit" class="btn btn-primary mt-1 mb-2">Kirim</button>
-            </form>
-        </div>
-    </div>
-    <div class="card-comment">
-        <div class="comment">
-            <div class="comment-name-out">
-                <h5>Ade Haryanto</h5>
-            </div>
-            <div class="comment-message">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard</p>
-            </div>
-        </div>
+    <detailnews-comments></detailnews-comments>

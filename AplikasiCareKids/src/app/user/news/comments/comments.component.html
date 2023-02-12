@@ -4,7 +4,8 @@
         <form #commnetsForm="ngForm" (ngSubmit)="onSubmit(commnetsForm.value)" [formGroup]="CommentForm">
             <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Berhasil !</strong> Komentar anda telah terkirim.
-                <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert"
+                    aria-label="Close"></button>
             </div>
             <div>
                 <label for="name" class="comment-name mt-1 mb-1">Nama</label>
@@ -20,14 +21,15 @@
                 <label for="message" class="comment-message mt-2 mb-1">Komentar</label>
                 <textarea name="message" formControlName="comment" id="message" cols="150" rows="3" class="form-control"
                     placeholder="Masukan Komentar Anda *"></textarea>
-                    <span
-                        *ngIf="CommentForm.controls.comment.invalid && (CommentForm.controls.comment.dirty || CommentForm.controls.comment.touched)"
-                        class="text-danger">
-                        Komentar harus diisi
-                    </span>
+                <span
+                    *ngIf="CommentForm.controls.comment.invalid && (CommentForm.controls.comment.dirty || CommentForm.controls.comment.touched)"
+                    class="text-danger">
+                    Komentar harus diisi
+                </span>
             </div>
-            
-            <button [disabled]="CommentForm.invalid" type="submit" class="btn btn-primary mt-2 mb-2"><b>Kirim</b></button>
+
+            <button [disabled]="CommentForm.invalid" type="submit"
+                class="btn btn-primary mt-2 mb-2"><b>Kirim</b></button>
         </form>
     </div>
 </div>

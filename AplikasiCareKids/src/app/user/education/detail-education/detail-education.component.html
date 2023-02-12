@@ -13,10 +13,6 @@
         <div class="card-content">
             <p class="content" style="text-indent: 45px;">{{ data.content }}</p>
         </div>
-        <div class="img-gallery" *ngFor="let d of data.images">
-            <div class="img-gallery-item">
-                <img src="{{ d.data }}" alt="image" class="img-thumbnail">
-            </div>
-        </div>
+        <app-images-list></app-images-list>
     </div>
     <detail-comments></detail-comments>

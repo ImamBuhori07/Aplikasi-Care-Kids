@@ -73,20 +73,6 @@
     margin-bottom: 10px;
 }
 
-.img-gallery{
-    width: 80%;
-    margin:30px auto 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 30px;
-}
-
-.img-gallery img{
-    width: 100%;
-    cursor: pointer;
-}
-
-
 @media screen and (max-width: 900px) {
     .card-work{
         margin-left: 20px;

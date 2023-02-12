@@ -7,10 +7,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Comment } from '../../classes/comment';
 
 //service
-import { EducationService } from '../../services/education.service';
+import { NewsService } from '../../services/news.service';
 
 @Component({
-  selector: 'detail-comments',
+  selector: 'detailnews-comments',
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.css']
 })
@@ -23,7 +23,7 @@ export class CommentsComponent implements OnInit {
 
   alert: boolean = false;
   comment: any;
-  constructor(private route: ActivatedRoute, private commentData: EducationService) {
+  constructor(private route: ActivatedRoute, private commentData: NewsService) {
     let article_id = this.route.snapshot.paramMap.get('id');
     article_id && this.commentData.getComment(article_id).subscribe((res: any) => {
       this.comment = res.data;
@@ -45,4 +45,5 @@ export class CommentsComponent implements OnInit {
   closeAlert() {
     this.alert = false;
   }
+
 }

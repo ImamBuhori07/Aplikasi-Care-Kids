@@ -17,6 +17,7 @@ import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { EducationComponent } from './education/education.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { EducationComponent } from './education/education.component';
     NewsComponent,
     ContactComponent,
     AboutComponent,
-    EducationComponent
+    EducationComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,

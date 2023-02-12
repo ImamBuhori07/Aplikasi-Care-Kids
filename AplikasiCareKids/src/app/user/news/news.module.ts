@@ -9,6 +9,8 @@ import { moduleMe } from '../modules/modules';
 import { HomeComponent } from './home/home.component';
 import { DetailNewsComponent } from './detail-news/detail-news.component';
 import { NewsComponent } from './news.component';
+import { CommentsComponent } from './comments/comments.component';
+import { ImagesComponent } from './images/images.component';
 
 const routes: Routes = [
     {
@@ -36,6 +38,8 @@ const routes: Routes = [
   declarations: [
     HomeComponent,
     DetailNewsComponent,
+    CommentsComponent,
+    ImagesComponent,
   ],
   imports: [
     CommonModule,
