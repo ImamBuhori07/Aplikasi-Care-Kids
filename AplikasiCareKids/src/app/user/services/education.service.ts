@@ -23,4 +23,12 @@ export class EducationService {
   getEducationById(id: string) {
     return this.http.get(this.detail + id);
   }
+
+  // postComment(article_id: string, CommentForm: Comment) {
+  //   return this.http.post(this.comment, CommentForm);
+  // }
+
+  getComment(article_id: string) {
+    return this.http.get(this.comment + '/' + article_id);
+  }
 }

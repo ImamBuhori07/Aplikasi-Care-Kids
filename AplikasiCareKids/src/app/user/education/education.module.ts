@@ -8,12 +8,14 @@ import { moduleMe } from '../modules/modules';
 import { EducationRoutingModule } from './education-routing.module';  
 import { HomeComponent } from './home/home.component'; 
 import { DetailEducationComponent } from './detail-education/detail-education.component';
+import { CommentsComponent } from './comments/comments.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     DetailEducationComponent,
+    CommentsComponent,
   ],
   imports: [
     CommonModule,

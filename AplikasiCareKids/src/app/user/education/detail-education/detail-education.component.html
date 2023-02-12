@@ -13,32 +13,10 @@
         <div class="card-content">
             <p class="content" style="text-indent: 45px;">{{ data.content }}</p>
         </div>
-        <div class="img-gallery">
+        <div class="img-gallery" *ngFor="let d of data.images">
             <div class="img-gallery-item">
-                <img src="{{ data.images }}" alt="image" class="img-thumbnail">
+                <img src="{{ d.data }}" alt="image" class="img-thumbnail">
             </div>
         </div>
     </div>
-    <div class="card-comment">
-        <h4>Komentar</h4>
-        <div class="form">
-            <!-- #commnetsForm="ngForm" (ngSubmit)="getCommentForm(commnetsForm.value)" -->
-            <form #commnetsForm="ngForm" (ngSubmit)="onSubmit(commnetsForm.value)" [formGroup]="CommentForm">
-                <label for="name" class="comment-name">Nama</label>
-                <input type="text" formControlName="name" id="name" name="name" class="form-control" placeholder="Masukan Nama Lengkap Anda *">
-                <label for="message" class="comment-message">Komentar</label>
-                <textarea name="message" formControlName="comment" id="message" cols="110" rows="3" class="form-control" placeholder="Masukan Pesan Anda *"></textarea>
-                <button type="submit" class="btn btn-primary mt-1 mb-2">Kirim</button>
-            </form>
-        </div>
-    </div>
-    <!-- *ngFor="let data of education " -->
-    <div class="card-comment">
-        <div class="comment">
-            <div class="comment-name-out">
-                <h5>{{ data.name }}</h5>
-            </div>
-            <div class="comment-message">
-                <p>{{ data.comments }}</p>
-            </div>
-</div>
+    <detail-comments></detail-comments>

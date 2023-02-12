@@ -3,10 +3,7 @@ import { Component, OnInit } from '@angular/core';
 //services
 import { EducationService } from '../../services/education.service';
 import { ActivatedRoute } from '@angular/router';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-//class
-import { Comment } from '../../classes/comment';
 @Component({
   selector: 'app-detail-education',
   templateUrl: './detail-education.component.html',
@@ -14,10 +11,7 @@ import { Comment } from '../../classes/comment';
 })
 export class DetailEducationComponent implements OnInit {
 
-  CommentForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    comment: new FormControl('', Validators.required)
-  });
+
   education: any;
   constructor(private route: ActivatedRoute, private detailData: EducationService) { }
 
@@ -29,11 +23,7 @@ export class DetailEducationComponent implements OnInit {
     });
   }
 
-  onSubmit(CommentForm: Comment) {
-    console.warn(CommentForm);
-    let article_id = this.route.snapshot.paramMap.get('id');
-    console.warn(article_id);
-  }
+
 
 }
 

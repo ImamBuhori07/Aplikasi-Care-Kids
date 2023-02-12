@@ -1,0 +1,88 @@
+.card-comment {
+    display: flex;
+    height: auto;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 0px;
+
+}
+
+.card-comment h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 16px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.card-comment .form {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form label{
+    padding-left: 15px;
+}
+
+
+.card-output{
+    display: block;
+    width: 100%;
+    height: auto;
+
+}
+
+.btn:hover{
+    background-color:orange;
+    color: #000;
+    font-weight: bold;
+}
+
+.commentList{
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.commentName{
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    margin-left: 20px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.commentName p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    margin-left: 20px;
+    text-align: right;
+}
+
+.commentMessage{
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    margin-left: 20px;
+    margin-right: 10px;
+    text-align: left;
+}
