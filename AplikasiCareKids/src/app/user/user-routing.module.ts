@@ -41,10 +41,10 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent
       },
-      {
-        path: '**',
-        component: NotFoundComponent
-      }
+      // {
+      //   path: '**',
+      //   component: NotFoundComponent
+      // }
 
     ]
   },
