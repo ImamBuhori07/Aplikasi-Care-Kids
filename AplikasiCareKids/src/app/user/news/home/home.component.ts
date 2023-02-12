@@ -1,30 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 
-
 //services
 import { HttpClient } from '@angular/common/http';
+import { NewsService } from '../../services/news.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  title = 'News';
 
-  search: string = '';
   page: number = 1;
+  allNews: any;
+  searchText: string = '';
   news: any;
-  constructor(private http: HttpClient) {
-    this.news = [];
+  constructor(private newsData: NewsService) {
+    this.newsData.getNews().subscribe((res: any) => {
+      this.news = res.data;
+      this.news = res.data.sort((a: any, b: any) => {
+        if (a['created_at'] > b['created_at']) {
+          return -1;
+        } else if (a['created_at'] < b['created_at']) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      this.allNews = this.news;
+    });
   }
 
   ngOnInit(): void {
-    this.getNews();
+
   }
 
-  getNews() {
-    this.http.get('http://127.0.0.1:8000/api/article/category/1').subscribe((res: any) => {
-      this.news = res.data;
-      console.log(this.news);
+  search(value: string) {
+    this.searchText = value;
+    this.news = this.allNews.filter((item: any) => {
+      return JSON.stringify(item).toLowerCase().includes(value.toLowerCase());
     });
   }
 }

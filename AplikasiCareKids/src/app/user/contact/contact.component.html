@@ -1,10 +1,11 @@
-<section class="mb-3 mt-3">
-    <h3 class="h1-responsive font-weight-bold text-center my-4">Hubungi Kami</h3>
-    <p class="text-center w-responsive mx-auto mb-3">Apakah Anda memiliki pertanyaan? <br> Tolong jangan ragu untuk menghubungi kami
-    secara langsung.<br>Tim kami akan membalas pesan anda secepatnya</p>
-
-    <div class="row">
-        <div class="col-md-9 mb-md-0 mb-0">
+<section class="card">
+    <div class="row col-12">
+        <div class="form col-8">
+            <div class="header">
+                <h3 class="h1-responsive font-weight-bold ">Hubungi Kami</h3>
+                <p class="w-responsive mb-3">Apakah Anda memiliki pertanyaan? <br> Tolong jangan ragu untuk menghubungi kami
+                    secara langsung.<br>Tim kami akan membalas pesan anda secepatnya</p>
+            </div>
             <form [formGroup]="contactForm" id="contact-form" name="contact-form" (ngSubmit)="onSubmit(postForm.value)" #postForm="ngForm">
 
                 <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
@@ -49,7 +50,7 @@
                     <div class="col-md-12">
                         <div class="md-form">
                             <label for="message">PESAN</label>
-                            <textarea type="text" name="pesan" formControlName="pesan" rows="5"
+                            <textarea type="text" name="pesan" formControlName="pesan" rows="6"
                                 class="form-control md-textarea" placeholder="Masukan Pesan Anda *"></textarea>
                             <span *ngIf="contactForm.controls.pesan.invalid && (contactForm.controls.pesan.dirty || contactForm.controls.pesan.touched)" class="text-danger">
                                 Pesan harus diisi
@@ -64,21 +65,24 @@
             <div class="status"></div>
         </div>
 
-        <div class="col-md-3 mt-4 text-center" *ngFor="let data of setting">
-            <ul class="list-unstyled" >
-        <div class="col-md-3 mt-3 text-center">
+        <div class="time col-3" *ngFor="let data of setting">
             <ul class="list-unstyled">
                 <li class="title-call">
                     <p>Jam Operasional<br>{{ data.waktu }}</p>
                 </li>
                 <li><i class="bi bi-telephone mt-0 fa-2x"></i>
-                    <p>Telepon<br>{{ data.tlp }}</p>
+                    <a routerLink=""><p>{{ data.tlp }}</p></a>
                 </li>
                 <li><i class="bi bi-whatsapp  mt-0 fa-2x"></i>
-                    <p>Whatsapp<br>{{ data.tlp }}</p>
+                     <a routerLink=""><p>{{ data.tlp }}</p></a>
                 </li>
                 <li><i class="bi bi-envelope mt-0 fa-2x"></i>
-                    <p>Email<br>{{ data.email }}</p>
+                    <a routerLink=""><p>{{ data.email }}</p></a>
+                </li>
+                <li><i class="bi bi-geo-alt mt-0 fa-2x"></i>
+                    <a routerLink=""><p>Jl. Soekarno Hatta, Bandung <br>Indonesia</p></a>
                 </li>
             </ul>
         </div>
+    </div>
+</section>

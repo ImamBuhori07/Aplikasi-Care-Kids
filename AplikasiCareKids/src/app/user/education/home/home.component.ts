@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 //services
-import { HttpClient } from '@angular/common/http';
+import { EducationService } from '../../services/education.service';
 
 @Component({
   selector: 'app-home',
@@ -9,25 +9,34 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  title = 'Education';
 
   page: number = 1;
-  url(arg0: any) {
-    throw new Error('Method not implemented.');
-  }
-
+  allEducation: any;
+  searchText: string = '';
   education: any;
-  constructor(private http: HttpClient) {
-    this.education = [];
+  constructor(private educationData: EducationService) {
+    this.educationData.getEducation().subscribe((res: any) => {
+      this.education = res.data.sort((a: any, b: any) => {
+        if (a['created_at'] > b['created_at']) {
+          return -1;
+        } else if (a['created_at'] < b['created_at']) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      this.allEducation = this.education;
+    });
   }
 
   ngOnInit(): void {
-    this.getEducation();
   }
 
-  getEducation() {
-    this.http.get('http://127.0.0.1:8000/api/article/category/2').subscribe((res: any) => {
-      this.education = res.data;
-      console.log(this.education);
+  search(value: string) {
+    this.searchText = value;
+    this.education = this.allEducation.filter((item: any) => {
+      return JSON.stringify(item).toLowerCase().includes(value.toLowerCase());
     });
   }
 }

@@ -2,8 +2,8 @@
     <div class="title-home">
         <p>Berita Hangat</p>
         <form class="col-md-6">
-            <input class="search" type="text" placeholder="Cari..." required [(ngModel)] = "search">
-            <input class="button-search" type="button" value="Cari">
+            <input class="search" type="text" name="search" placeholder="Cari Berita ..." required [(ngModel)]="searchText"
+                (input)="search(searchText)" />
         </form>
     </div>
     <div routerLink="detail/{{ data.id }}" class="card-post" *ngFor="let data of news | paginate: { itemsPerPage: 5, currentPage: page }">

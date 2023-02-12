@@ -7,12 +7,14 @@ import { UserComponent } from './user.component';
 import { BerandaComponent } from './beranda/beranda.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
+
   {
-    path:'',
-    redirectTo:'beranda',
-    pathMatch:'full'
+    path: '',
+    redirectTo: 'beranda',
+    pathMatch: 'full'
   },
   {
     path: '',
@@ -26,7 +28,7 @@ const routes: Routes = [
         path: 'news',
         loadChildren: () => import('./news/news.module').then(m => m.NewsModule)
       },
-      
+
       {
         path: 'education',
         loadChildren: () => import('./education/education.module').then(m => m.EducationModule)
@@ -39,6 +41,10 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent
       },
+      {
+        path: '**',
+        component: NotFoundComponent
+      }
 
     ]
   },

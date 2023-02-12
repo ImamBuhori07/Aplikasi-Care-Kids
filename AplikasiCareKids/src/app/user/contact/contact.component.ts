@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 //service
 import { ContactService } from '../services/contact.service';
 
-//model
+//class
 import { Contact } from '../classes/contact';
 
 @Component({
@@ -33,7 +33,6 @@ export class ContactComponent {
 
   onSubmit(contactForm: Contact) {
     this.Data.postContact(contactForm).subscribe((res: any) => {
-      console.log(res);
       this.alert = true;
       this.contactForm.reset();
     })

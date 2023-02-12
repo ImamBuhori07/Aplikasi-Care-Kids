@@ -9,10 +9,10 @@ import { EducationComponent } from './education.component';
 const routes: Routes = [
     {
         path: '',
-        redirectTo:'home',
-        pathMatch:'full'
+        redirectTo: 'home',
+        pathMatch: 'full'
     },
-    {   
+    {
         path: '',
         component: EducationComponent,
         children: [

@@ -9,33 +9,39 @@ import { moduleMe } from '../modules/modules';
 import { HomeComponent } from './home/home.component';
 import { DetailNewsComponent } from './detail-news/detail-news.component';
 import { NewsComponent } from './news.component';
+import { CommentsComponent } from './comments/comments.component';
+import { ImagesComponent } from './images/images.component';
+import { SearchPipe } from './search.pipe';
 
 const routes: Routes = [
-    {
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
+    component: NewsComponent,
+    children: [
+      {
         path: '',
-        redirectTo:'home',
-        pathMatch:'full'
-    },
-    {
-        path: '',
-        component: NewsComponent,
-        children: [
-            {
-                path: '',
-                component: HomeComponent
-            },
-            {
-                path: 'detail/:id',
-                component: DetailNewsComponent
-            },
-        ]
-    },
+        component: HomeComponent
+      },
+      {
+        path: 'detail/:id',
+        component: DetailNewsComponent
+      },
+    ]
+  },
 ];
 
 @NgModule({
   declarations: [
     HomeComponent,
     DetailNewsComponent,
+    CommentsComponent,
+    ImagesComponent,
+    SearchPipe,
   ],
   imports: [
     CommonModule,

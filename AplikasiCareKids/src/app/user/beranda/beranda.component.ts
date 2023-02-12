@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-//my modules
-import { HttpClient } from '@angular/common/http';
+//services
+import { BerandaService } from '../services/beranda.service';
+import { NewsService } from '../services/news.service';
+import { EducationService } from '../services/education.service';
+import { AboutService } from '../services/about.service';
 @Component({
   selector: 'app-beranda',
   templateUrl: './beranda.component.html',
@@ -10,37 +13,53 @@ import { HttpClient } from '@angular/common/http';
 export class BerandaComponent implements OnInit {
 
   page: number = 1;
+  beranda: any;
   news: any;
   education: any;
-  constructor(private http: HttpClient) {
-    this.news = [];
-    this.education = [];
+  about: any;
+
+  constructor(private berandaData: BerandaService, private newsData: NewsService, private educationData: EducationService, private aboutData: AboutService) {
+    this.berandaData.getAll().subscribe((res: any) => {
+      this.berandaData = res.data;
+      console.warn(res);
+    });
+
+    this.newsData.getNews().subscribe((res: any) => {
+      this.news = res.data;
+      this.news = res.data.sort((a: any, b: any) => {
+        if (a['created_at'] > b['created_at']) {
+          return -1;
+        } else if (a['created_at'] < b['created_at']) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      console.warn(res);
+    });
+
+    this.educationData.getEducation().subscribe((res: any) => {
+      this.education = res.data;
+      this.education = res.data.sort((a: any, b: any) => {
+        if (a['created_at'] > b['created_at']) {
+          return -1;
+        } else if (a['created_at'] < b['created_at']) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      console.warn(res);
+    });
+
+    this.aboutData.getAbout().subscribe((res: any) => {
+      this.about = res.data;
+      console.warn(res);
+    });
   }
 
   ngOnInit(): void {
-    this.getNews();
-    this.getEducation();
-  }
 
-  getNews() {
-    this.http.get('http://127.0.0.1:8000/api/article/category/1').subscribe((res: any) => {
-      this.news = res.data;
-      console.log(this.news);
-    });
-  }
-
-  getEducation() {
-    this.http.get('http://127.0.0.1:8000/api/article/category/2').subscribe((res: any) => {
-      this.education = res.data;
-      console.log(this.education);
-    });
-  }
-
-  key = 'created_at';
-  reverse = true;
-  sortByDate(key: string) {
-    this.key = key;
-    this.reverse = !this.reverse;
   }
 
 }
