@@ -14,7 +14,7 @@ export class register {
     email :string="";
     fullname:string="";
     password:string="";
-    password_confirmation:string="";    
+    confpassword:string="";    
 
 }
 

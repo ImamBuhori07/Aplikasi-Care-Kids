@@ -8,37 +8,37 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center form_container">
-                    <form>
+                    <form [formGroup]="registerform"> 
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" name="email" class="form-control input_user" value=""
+                            <input type="text" formControlName="email" class="form-control input_user" value=""
                                 placeholder="Email">
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" name="full_name" class="form-control input_user" value=""
+                            <input type="text" formControlName="fullname" class="form-control input_user" value=""
                                 placeholder="Full Name">
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" name="password" class="form-control input_pass" value=""
+                            <input type="password" formControlName="password" class="form-control input_pass" value=""
                                 placeholder="Password">
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" name="password_confirmation" class="form-control input_pass" value=""
+                            <input type="password" formControlName="password_confirmation" class="form-control input_pass" value=""
                                 placeholder="Password Confirmation">
                         </div>
                         <div class="d-flex justify-content-center mt-3 login_container">
-                            <button type="button" name="button" class="btn login_btn"><b>Sign Up</b></button>
+                            <button type="button" name="button" class="btn login_btn" (click)="onSubmit"><b>Sign Up</b></button>
                         </div>
                     </form>
                 </div>
