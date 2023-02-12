@@ -29,7 +29,12 @@
 }
 
 .form label{
-    padding-left: 15px;
+    padding-left: 13px;
+}
+
+.form span{
+    font-size: 14px;
+    padding-left: 13px;
 }
 
 

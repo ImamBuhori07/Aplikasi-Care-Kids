@@ -21,6 +21,7 @@ export class CommentsComponent implements OnInit {
     comment: new FormControl('', Validators.required)
   });
 
+  alert: boolean = false;
   comment: any;
   constructor(private route: ActivatedRoute, private commentData: EducationService) {
     let article_id = this.route.snapshot.paramMap.get('id');
@@ -35,19 +36,15 @@ export class CommentsComponent implements OnInit {
   }
 
   onSubmit(CommentForm: Comment) {
-    console.warn(CommentForm);
     let article_id = this.route.snapshot.paramMap.get('id');
     console.warn(article_id);
+    article_id && this.commentData.postComment(CommentForm, article_id).subscribe((res: any) => {
+      console.warn(res);
+      this.alert = true;
+      this.CommentForm.reset();
+    });
   }
-
-  // getComment() {
-  //   let article_id = this.route.snapshot.paramMap.get('id');
-  //   console.warn(article_id);
-  //   article_id && this.commentData.getComment(article_id).subscribe((res: any) => {
-  //     this.comment = Array.of(res.data);
-  //     console.warn(this.comment);
-  //   }
-  //   );
-  // }
-
+  closeAlert() {
+    this.alert = false;
+  }
 }

@@ -2,17 +2,35 @@
     <h4>Komentar</h4>
     <div class="form">
         <form #commnetsForm="ngForm" (ngSubmit)="onSubmit(commnetsForm.value)" [formGroup]="CommentForm">
-            <label for="name" class="comment-name mt-1 mb-1">Nama</label>
-            <input type="text" formControlName="name" id="name" name="name" class="form-control"
-                placeholder="Masukan Nama Lengkap Anda *">
-            <label for="message" class="comment-message mt-2 mb-1">Komentar</label>
-            <textarea name="message" formControlName="comment" id="message" cols="150" rows="3" class="form-control"
-                placeholder="Masukan Pesan Anda *"></textarea>
+            <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Berhasil !</strong> Komentar anda telah terkirim.
+                <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div>
+                <label for="name" class="comment-name mt-1 mb-1">Nama</label>
+                <input type="text" formControlName="name" id="name" name="name" class="form-control"
+                    placeholder="Masukan Nama Anda *">
+                <span
+                    *ngIf="CommentForm.controls.name.invalid && (CommentForm.controls.name.dirty || CommentForm.controls.name.touched)"
+                    class="text-danger">
+                    Nama harus diisi
+                </span>
+            </div>
+            <div>
+                <label for="message" class="comment-message mt-2 mb-1">Komentar</label>
+                <textarea name="message" formControlName="comment" id="message" cols="150" rows="3" class="form-control"
+                    placeholder="Masukan Komentar Anda *"></textarea>
+                    <span
+                        *ngIf="CommentForm.controls.comment.invalid && (CommentForm.controls.comment.dirty || CommentForm.controls.comment.touched)"
+                        class="text-danger">
+                        Komentar harus diisi
+                    </span>
+            </div>
+            
             <button type="submit" class="btn btn-primary mt-2 mb-2"><b>Kirim</b></button>
         </form>
     </div>
 </div>
-<!-- *ngFor="let data of education " -->
 <div class="card-comment" *ngFor="let data of comment">
     <div class="commentList">
         <div class="commentName">
