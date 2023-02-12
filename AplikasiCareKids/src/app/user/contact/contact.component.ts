@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 //service
 import { ContactService } from '../services/contact.service';
 
-//model
+//class
 import { Contact } from '../classes/contact';
 
 @Component({
