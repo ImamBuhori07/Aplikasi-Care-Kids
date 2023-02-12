@@ -11,8 +11,9 @@ import { NewsService } from '../../services/news.service';
 export class HomeComponent implements OnInit {
   title = 'News';
 
-  search: string = '';
   page: number = 1;
+  allNews: any;
+  searchText: string = '';
   news: any;
   constructor(private newsData: NewsService) {
     this.newsData.getNews().subscribe((res: any) => {
@@ -26,11 +27,18 @@ export class HomeComponent implements OnInit {
           return 0;
         }
       });
-      console.warn(res);
+      this.allNews = this.news;
     });
   }
 
   ngOnInit(): void {
 
+  }
+
+  search(value: string) {
+    this.searchText = value;
+    this.news = this.allNews.filter((item: any) => {
+      return JSON.stringify(item).toLowerCase().includes(value.toLowerCase());
+    });
   }
 }

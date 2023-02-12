@@ -2,12 +2,11 @@
     <div class="title-home">
         <p>Artikel Teratas</p>
         <form class="col-md-6" >
-            <!-- [(ngModel)]="searchText" -->
-            <input   class="search" type="text" placeholder="Cari..." required class="form-control"/>
-            <input class="button-search" type="button" value="Cari">
+            <input class="search" type="text" name="search" placeholder="Cari..." required [(ngModel)]="searchText"
+                (input)="search(searchText)" />
         </form>
     </div>
-    <div routerLink="detail/{{ data.id }}" class="card-post" *ngFor="let data of education | paginate: { itemsPerPage: 5, currentPage: page } ">
+    <div routerLink="detail/{{ data.id }}" class="card-post" *ngFor="let data of education | paginate: { itemsPerPage: 5, currentPage: page } | search: searchText; index as i">
         <div class="card-post-img">
             <img src="{{ data.thumbnail }}"
                 alt="">

@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   title = 'Education';
 
   page: number = 1;
-
+  allEducation: any;
   searchText: string = '';
   education: any;
   constructor(private educationData: EducationService) {
@@ -26,11 +26,17 @@ export class HomeComponent implements OnInit {
           return 0;
         }
       });
-      console.warn(res);
+      this.allEducation = this.education;
     });
   }
 
   ngOnInit(): void {
+  }
 
+  search(value: string) {
+    this.searchText = value;
+    this.education = this.allEducation.filter((item: any) => {
+      return JSON.stringify(item).toLowerCase().includes(value.toLowerCase());
+    });
   }
 }

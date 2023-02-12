@@ -44,31 +44,7 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: 0.5s ease;
-    width: 80%;
-}
-
-.button-search {
-    background-color: #3C6BC6;
-    color: #fff;
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.5s ease;
-    width: 18%;
-    font-weight: bold;
-}
-
-.button-search:hover {
-    background-color: orange;
-    color: black;
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.5s ease;
-    width: 18%;
-    font-weight: bold;
+    width: 100%;
 }
 
 .card-post {
