@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 //services
-import { HttpClient } from '@angular/common/http';
 import { EducationService } from '../../services/education.service';
 
 @Component({
@@ -13,14 +12,20 @@ export class HomeComponent implements OnInit {
   title = 'Education';
 
   page: number = 1;
-  url(arg0: any) {
-    throw new Error('Method not implemented.');
-  }
 
+  searchText: string = '';
   education: any;
-  constructor(private http: HttpClient, private educationData: EducationService) {
+  constructor(private educationData: EducationService) {
     this.educationData.getEducation().subscribe((res: any) => {
-      this.education = res.data;
+      this.education = res.data.sort((a: any, b: any) => {
+        if (a['created_at'] > b['created_at']) {
+          return -1;
+        } else if (a['created_at'] < b['created_at']) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
       console.warn(res);
     });
   }
@@ -28,6 +33,4 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
-  keywordValue: string = '';
 }

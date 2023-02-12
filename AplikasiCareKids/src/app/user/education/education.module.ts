@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { DetailEducationComponent } from './detail-education/detail-education.component';
 import { CommentsComponent } from './comments/comments.component';
 import { ImagesListComponent } from './images-list/images-list.component';
+import { SearchPipe } from './search.pipe';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ImagesListComponent } from './images-list/images-list.component';
     DetailEducationComponent,
     CommentsComponent,
     ImagesListComponent,
+    SearchPipe,
   ],
   imports: [
     CommonModule,

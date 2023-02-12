@@ -26,11 +26,29 @@ export class BerandaComponent implements OnInit {
 
     this.newsData.getNews().subscribe((res: any) => {
       this.news = res.data;
+      this.news = res.data.sort((a: any, b: any) => {
+        if (a['created_at'] > b['created_at']) {
+          return -1;
+        } else if (a['created_at'] < b['created_at']) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
       console.warn(res);
     });
 
     this.educationData.getEducation().subscribe((res: any) => {
       this.education = res.data;
+      this.education = res.data.sort((a: any, b: any) => {
+        if (a['created_at'] > b['created_at']) {
+          return -1;
+        } else if (a['created_at'] < b['created_at']) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
       console.warn(res);
     });
 
