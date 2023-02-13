@@ -5,7 +5,7 @@ body {
     margin-right: 70px;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     box-shadow: 0 0 10px #ccc;
     height: auto;
 }
@@ -60,8 +60,9 @@ body {
 }
 
 .content p {
-    font-size: 16px;
+    font-size: 18px;
     text-align: justify;
+    text-indent: 50px;
 }
 
 /* card */

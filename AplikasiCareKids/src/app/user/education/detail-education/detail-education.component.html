@@ -3,15 +3,15 @@
         <div class="card-title">{{ data.title }}</div>
     </div>
     <div class="card-date">
-        <div class="date">{{ data.created_at }}</div>
-        <div class="author">By : {{ data.author }}</div>
+        <div class="date"> Diposting pada: {{ data.created_at }}</div>
+        <div class="author">Penulis: {{ data.author }}</div>
     </div>
     <div class="img-section" >
         <img src="{{ data.thumbnail }}" alt="image" class="img-thumbnail">
     </div>
     <div class="card-desc">
         <div class="card-content">
-            <p class="content" style="text-indent: 45px;">{{ data.content }}</p>
+            <p class="content">{{ data.content }}</p>
         </div>
         <app-images-list></app-images-list>
         <app-video></app-video>
