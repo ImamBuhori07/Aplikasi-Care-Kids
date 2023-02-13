@@ -16,6 +16,8 @@ export class ImagesListComponent implements OnInit {
     let article_id = this.route.snapshot.paramMap.get('id');
     article_id && this.imageList.getImage(article_id).subscribe((res: any) => {
       this.images = res.data;
+
+      console.log(this.images);
     });
   }
 

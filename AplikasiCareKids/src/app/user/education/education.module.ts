@@ -11,6 +11,7 @@ import { DetailEducationComponent } from './detail-education/detail-education.co
 import { CommentsComponent } from './comments/comments.component';
 import { ImagesListComponent } from './images-list/images-list.component';
 import { SearchPipe } from './search.pipe';
+import { VideoComponent } from './video/video.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { SearchPipe } from './search.pipe';
     CommentsComponent,
     ImagesListComponent,
     SearchPipe,
+    VideoComponent,
   ],
   imports: [
     CommonModule,
