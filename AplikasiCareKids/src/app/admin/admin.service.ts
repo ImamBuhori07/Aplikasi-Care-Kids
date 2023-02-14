@@ -10,31 +10,14 @@ import { response } from 'express';
   providedIn: 'root'
 })
 export class AdminService {
-  category() {
-    throw new Error('Method not implemented.');
-  }
-
-  constructor(private http: HttpClient) { }
-
-        // getcategory(){
-        //   return this.http.get<Category[]>(`${environment.baseUrl}/api/category`)
-        // }
-    
-        // tambahcategory(category:saveCategory){
-        //   return this.http.post<Category[]>(`${environment.baseUrl}/api/category`,category, {observe: "response"})
-        // }
-
-        // updatecategory(category:saveCategory){
-        //   return this.http.put(`${environment.baseUrl}/category`,category, {observe:"response"})
-        // }
-
-        // deletecategory(name_category: string){
-        //   return this.http.delete(`${environment.baseUrl}/name_category/delete/${Category}`,{observe:"response"})
-        // }
+ 
 
 
-        
+    constructor(private http:HttpClient){}
 
 
+  // getCategory(){
+  //   this.http.get([])
+  // }
 
 }

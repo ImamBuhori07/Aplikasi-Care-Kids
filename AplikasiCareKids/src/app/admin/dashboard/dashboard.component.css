@@ -24,13 +24,13 @@ h4 {
     margin-left: 20px;
 }
 
-#angka {
+#count {
     position: absolute;
     margin-top: 114px;
     margin-left: 20px;
 }
 
-.kotak1,.kotak2,.kotak3 {
+.visitor-box,.comment-box,.message-box {
   
     border-radius: 20px;
     background: #3C6BC6;
@@ -41,17 +41,22 @@ h4 {
     
 }
 
-.kotak1 {
+.visitor-box {
     left: 72px;
     top: 349px;
 }
 
-.kotak2 {
+.comment-box {
     left: 398px;
     top: 349px;
 }
 
-.kotak3 {
+.message-box {
     left: 724px;
     top: 349px;
+}
+
+
+h3 {
+    position: absolute;
 }

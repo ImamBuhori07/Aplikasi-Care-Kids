@@ -4,6 +4,7 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { response } from 'express';
 import { Router } from '@angular/router';
 import { AuthModule } from '../auth.module';
+import { register } from '../auth.model';
 
 @Component({
   selector: 'app-register',
@@ -31,14 +32,12 @@ export class RegisterComponent implements OnInit{
         return;
       }
 
-      const email = this.registerform.get('email')?.value;
-      const fullname = this.registerform.get('fullname')?.value;
-      const password = this.registerform.get('password')?.value;
-      const password_confirmation = this.registerform.get('password_confirmation')?.value;
-
-      this.authservice.register(email,fullname,password,password_confirmation).subscribe(
+      const {email,fullname,password,password_confirmation} = this.registerform.value;
+      const registerdata: register = {email,fullname,password,password_confirmation};
+      this.authservice.register(registerdata).subscribe(
+       
         response => {
-          this.route.navigate(['/login'])
+          this.route.navigate(['auth/login'])
         },
 
         error => {

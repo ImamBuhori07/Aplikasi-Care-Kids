@@ -8,8 +8,12 @@ import { AdminService } from '../admin.service';
   templateUrl: './tambahpostingan.component.html',
   styleUrls: ['./tambahpostingan.component.css']
 })
+
+   
+
 export class TambahpostinganComponent {
 
-  
+  judul : string ="Tambah Postingan";
+
   }
 

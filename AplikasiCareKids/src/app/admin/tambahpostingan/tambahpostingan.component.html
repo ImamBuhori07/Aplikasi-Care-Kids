@@ -1,14 +1,22 @@
-<div class="main">
-    <div class="kotak" style="background: #b4b4b4; width: 750px; height: 435px;"></div>
-    <textarea class="form-control" style="resize: none; width: 750px; height: 400px;" name="addpost" id="addpost" cols="30" rows="1" placeholder="Tulis Sesuatu atau klik “+” untuk memunculkan menu"></textarea>
-    <input type="text" placeholder="Masukkan Judul" class="" style="width: 750px;">
-    <a href="" class="text-decoration-none bg-dark"><i class="bi bi-plus-circle-fill" style="position: absolute;"></i></a>
-    <div class="kotak2 text-center">
+
+<h3>{{judul}}</h3>
+
+<form action="">
+    <div class="main">
+      <div class="box" style="background: #b4b4b4; width: 750px; height: 435px;"></div>
+      <textarea class="form-control" style="resize: none; width: 750px; height: 400px;" name="addpost" id="addpost" cols="30" rows="1" placeholder="Tulis Sesuatu atau klik “+” untuk memunculkan menu"></textarea>
+      <input type="text" placeholder="Masukkan Judul" class="" style="width: 750px;">
+      <a href="" class="text-decoration-none bg-dark"><i class="bi bi-plus-circle-fill" style="position: absolute;"></i></a>
+      <div class="box-2 text-center">
         <label for="penulis" class="satu fw-bold">Penulis</label>
         <input type="text" id="writer" style="width: 200px; background-color: yellow;">
         <label for="terbit" class="dua fw-bold">Terbit</label>
         <input type="text" id="rise" style="width: 200px; background-color: yellow;">
+      </div>
+      <button type="submit" class="btn btn-primary upload">Terbitkan</button>
+      <button type="submit" class="btn btn-warning draft">Draft</button>
     </div>
-    <button type="submit" class="btn btn-outline-dark upload">Terbitkan</button>
-    <button type="submit" class="btn btn-outline-dark draft">Draft</button>
-</div>
+</form>
+  
+
+   

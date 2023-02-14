@@ -1,8 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Auth, login,register} from './auth.model';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, of, pipe, throwError } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -25,13 +26,14 @@ export class AuthService {
     }, httpOptions);
   }
 
-  register(email:string, fullname:string, password:string, password_confirmation:string): Observable<any> {
-    return this.http.post(`${AUTH_API}register`, {
-      email,
-      fullname,
-      password,
-      password_confirmation
-    }, httpOptions);
+  register(registerdata:register): Observable<any> {
+    return this.http.post(`${AUTH_API}register`, registerdata, httpOptions)
+    .pipe(
+      catchError(error => {
+        console.log(error);
+        return of (null);
+      })
+    );
   }
 
   setToken(token:string):void{

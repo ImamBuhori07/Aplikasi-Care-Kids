@@ -2,13 +2,13 @@
 /* .main {
 } */
 
-.kotak {
+.box {
     position: absolute;
     margin-left: 100px;
     margin-top: 65px;
 }
 
-.kotak2 {
+.box-2 {
     position: absolute;
     box-sizing: border-box;
     border: 1px solid black ;
@@ -79,5 +79,12 @@ label.dua{
     margin-left: 925px;
     margin-top: 400px;
     
+}
+
+h3 {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 98px;
+    font-weight: bold;
 }
 

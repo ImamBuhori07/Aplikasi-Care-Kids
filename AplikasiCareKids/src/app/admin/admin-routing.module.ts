@@ -4,7 +4,6 @@ import { AdminComponent } from './admin.component';
 import { BeritaComponent } from './berita/berita.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EdukasiComponent } from './edukasi/edukasi.component';
-import { InfoanakhilangComponent } from './infoanakhilang/infoanakhilang.component';
 import { PesanComponent } from './pesan/pesan.component';
 import { TambahpostinganComponent } from './tambahpostingan/tambahpostingan.component';
 
@@ -27,11 +26,6 @@ const routes: Routes = [
       {
         path: 'berita',
         component: BeritaComponent
-      },
-
-      {
-        path:'infoanakhilang',
-        component: InfoanakhilangComponent
       },
 
       {
