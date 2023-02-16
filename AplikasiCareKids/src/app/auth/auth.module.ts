@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule , HttpHeaders } from '@angular/common/http';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule,FormGroup,FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 

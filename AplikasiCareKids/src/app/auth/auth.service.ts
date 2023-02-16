@@ -26,14 +26,24 @@ export class AuthService {
     }, httpOptions);
   }
 
-  register(registerdata:register): Observable<any> {
-    return this.http.post(`${AUTH_API}register`, registerdata, httpOptions)
-    .pipe(
+  register(email: string,full_name: string, password: string,password_confirmation: string): Observable<any> {
+    return this.http.post(`${AUTH_API}register`,{ email,full_name,password,password_confirmation}, httpOptions)
+    // .pipe(
+    //   catchError(error => {
+    //     console.log(error);
+    //     return of (null)
+    //   })
+    // );
+  }
+
+  logout():Observable<any>{
+    return this.http.post(`${AUTH_API}logout`,{}, httpOptions)
+    .pipe (
       catchError(error => {
         console.log(error);
         return of (null);
       })
-    );
+    )
   }
 
   setToken(token:string):void{

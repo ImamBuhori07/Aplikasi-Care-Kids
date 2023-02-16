@@ -1,10 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
-import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
 import { response } from 'express';
 import { Router } from '@angular/router';
 import { AuthModule } from '../auth.module';
 import { register } from '../auth.model';
+
+
+interface Register {
+      email : string ;
+      full_name : string;
+      password : string;
+      password_confirmation : string;
+}
 
 @Component({
   selector: 'app-register',
@@ -13,39 +21,37 @@ import { register } from '../auth.model';
 })
 export class RegisterComponent implements OnInit{
 
-    registerform!: FormGroup;
+      registerform!:FormGroup;
+  
 
-
-    constructor(private formbuilder: FormBuilder, private authservice: AuthService, private route : Router){}
+    constructor(private formbuilder: FormBuilder, private authservice: AuthService, private router : Router){}
 
     ngOnInit(): void {
         this.registerform = this.formbuilder.group({
           email:['', [Validators.required, Validators.email]],
-          fullname:['',Validators.required],
+          full_name:['',Validators.required],
           password:['',[Validators.required, Validators.minLength(8)]],
           password_confirmation: ['', Validators.required]
         });
-    }
 
-    onSubmit():void{
-      if(this.registerform.invalid){
-        return;
       }
 
-      const {email,fullname,password,password_confirmation} = this.registerform.value;
-      const registerdata: register = {email,fullname,password,password_confirmation};
-      this.authservice.register(registerdata).subscribe(
-       
-        response => {
-          this.route.navigate(['auth/login'])
-        },
+    onsubmit(formValue: {email:string,full_name:string,password:string,password_confirmation:string}){
+    
+      // if (this.registerform.invalid){
+      //   return;
+      // }
+      this.authservice.register(formValue.email,formValue.full_name,formValue.password,formValue.password_confirmation).subscribe(() => {
+        this.router.navigate(['/login'])
+      });
 
-        error => {
-          console.log('Gagal Melakukan Register', error);
-        }
+    }
+   
 
-      )
+      // const {email,fullname,password,password_confirmation} = this.registerform.value;
+      // const registerdata: register = {email,fullname,password,password_confirmation};
+      // this.authservice.register(registerdata)
       
     }
 
-}
+  

@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       },
       (error) => {
       console.log('Login failed:', error);
-      alert('Login Gagal. Email dan Password Tidak Terdaftar.');
+      alert('Email dan Password Tidak Terdaftar.');
       }
     )
   }

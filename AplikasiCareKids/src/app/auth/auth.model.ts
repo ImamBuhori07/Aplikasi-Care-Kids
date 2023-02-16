@@ -12,7 +12,7 @@ export class login {
 export class register {
     
     email :string="";
-    fullname:string="";
+    full_name:string="";
     password:string="";
     password_confirmation:string="";    
 
