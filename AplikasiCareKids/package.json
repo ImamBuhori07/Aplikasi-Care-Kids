@@ -25,6 +25,7 @@
     "express": "^4.18.2",
     "jquery": "^3.6.3",
     "jsonwebtoken": "^9.0.0",
+    "ng-sidebar": "^9.4.3",
     "ng2-order-pipe": "^0.1.5",
     "ng2-search-filter": "^0.5.1",
     "ngx-cookie-service": "^15.0.0",

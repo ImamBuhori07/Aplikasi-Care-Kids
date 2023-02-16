@@ -56,18 +56,8 @@ nav ul li a:hover {
     background: orange;
 }
 
-.checkbtn {
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-}
-
-#check {
-    display: none;
+ng-sidebar-container {
+display: none;
 }
 
 .footer {
@@ -94,193 +84,104 @@ nav ul li a:hover {
 }
 
 @media (max-width: 1150px) {
-    .checkbtn {
-        color: #ffffff;
-        float: right;
-        line-height: 80px;
-        margin-right: 8%;
-        cursor: pointer;
+    ng-sidebar-container {
         display: block;
     }
 
-    ul {
-        position: fixed;
-        width: 100%;
-        height: 140vh;
+    .sidebar {
+        display: block;
+    }
+
+    .sidebar .logo{
+        margin-left: -33px;
+    }
+
+    .sidebar .btn {
+        display: block;
+        float: right;
+        color: #ffffff;
+        border: none;
+        padding: 10px;
+        margin-right: 8%;
+        margin-top: 5px;
+    }
+
+    ng-sidebar ul{
+        display: block;
         background: #3C6BC6;
-        top: 80px;
-        left: -100%;
-        text-align: center;
+        text-align: left;
         transition: all .5s;
         z-index: 1 !important;
+        position: fixed;
+        width: 40%;
+        height: 100vh;
+        top: 80px;
     }
 
-    nav ul li {
+    ng-sidebar ul li{
+        display: block; 
+        margin-left: 50px;
+        margin-top: 5px;
+    }
+
+    ng-sidebar ul li a{
         display: block;
-        margin: 50px 0;
+        color: #fff;
         line-height: 30px;
     }
 
+    ng-sidebar ul li a:hover{
+        background: orange;
+        color: #000;
+    }
+
+    ng-sidebar .menu {
+        display: block;
+        font-size: 17px;
+        color: black;
+        font-weight: bold;
+        background-color: orange;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 63px;
+    }
+
+    .menu .btn-menu{
+        display: block;
+        float: right;
+        color: #ffffff;
+        margin-right: 30px;
+        border: none;
+    }
+
+    .navi{
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    label.logo {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+
     nav ul li a {
-        font-size: 20px;
+        font-size: 14px;
+    }
+    
+    ng-sidebar ul li{
+        margin-left: 20px;
     }
 
-    a:hover,
-    a.active {
-        background: none;
-        color: #0082e6;
+    ng-sidebar .menu {
+        display: block;
+        font-size: 17px;
+        color: black;
+        font-weight: bold;
+        background-color: orange;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 33px;
+
     }
-
-    #check:checked~ul {
-        left: 0;
-    }
 }
-
-
-/* * {
-    margin: 0;
-    padding: 0;
-}
-
-html,
-body {
-    background-color: #f2f2f2;
-    font-family: 'Poppins', sans-serif;
-    height: 100%;
-    width: 100%;
-}
-
-#container {
-    background-color: #f2f2f2;
-} */
-
-/* .navigation */
-/* .navigation {
-    width: 100%;
-    height: 70px;
-    background-color: #3C6BC6;
-}
-
-.logo {
-    font-size: 40px;
-    color: #fff;
-    font-weight: bold;
-    margin-left: 8%;
-    line-height: 68px;
-}
-.logo a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.navigation ul {
-    float: right;
-    margin-right: 100px;
-    margin-top: 23px;
-}
-
-.navigation ul li {
-    display: inline-block;
-    position: relative;
-    margin: 0 2px;
-}
-
-.navigation ul li > a {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 19px;
-    font-weight: bold;
-    transition: 0.6s ease;
-}
-
-.navigation >ul > li > a:hover {
-    background-color: orange;
-    color: #000;
-}
-
-.active,
-.nav > ul > li:hover>a {
-    background-color: orange;
-
-}
-
-.navigation ul li ul.dropdown {
-    position: absolute;
-    background-color: #3C6BC6;
-    display: none;
-    border-radius: 0 0 10px 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-top: 10px;
-    transition: 0.6s ease;
-    width: 250px;
-    z-index: 1 !important;
-}
-
-.navigation ul li:hover ul.dropdown {
-    display: block;
-    z-index: auto;
-}
-
-.navigation ul li ul.dropdown>li {
-    display: block;
-    margin: 5px 0;
-}
-
-.navigation ul li ul.dropdown li a {
-    display: block;
-    text-align: left;
-    font-size: 16px;
-}
-
-.navigation ul li ul.dropdown li>a:hover {
-    background-color: orange;
-    color: #000;
-    width: 80%;
-    margin-left: 10%;
-}
-
-.checkbtn {
-    font-size: 30px;
-    color: #fff;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-}
-
-#check {
-    display: none;
-} */
-/* end navigation */
-/* footer */
-/* .footer {
-    width: 100%;
-    height: auto;
-    background-color: #3C6BC6;
-    text-align: center;
-    color: rgb(255, 252, 252);
-    font-size: 20px;
-    line-height: 40px;
-}
-
-.copyrigth {
-    margin-top: 2px;
-}
-
-.footer a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-
-.footer a:hover {
-    background-color: orange;
-    color: rgb(3, 3, 3);
-} */
-/* end footer */
-/* Responsif */
-/* @media (max-width: 952px) {
-     */

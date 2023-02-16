@@ -1,17 +1,38 @@
 <body>
     <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="bi bi-menu-app"></i>
-        </label>
-        <label class="logo"><a routerLink="beranda">CareKids</a></label>
-        <ul>
-            <li><a routerLink="beranda">Beranda</a></li>
-            <li><a routerLink="news">Berita</a></li>
-            <li><a routerLink="education">Edukasi</a></li>
-            <li><a routerLink="about">Tentang Kami</a></li>
-            <li><a routerLink="contact">Hubungi Kami</a></li>
-        </ul>
+        <ng-sidebar-container>
+            <ng-sidebar [opened]="opened">
+                <ul>
+                    <label class="menu">Menu
+                        <label (click)="toggleSidebar()" class="btn-menu">
+                            <i class="bi bi-x-circle"></i>
+                        </label>
+                    </label>
+                    <li (click)="toggleSidebar()"><a routerLink="beranda">Beranda</a></li>
+                    <li (click)="toggleSidebar()"><a routerLink="news">Berita</a></li>
+                    <li (click)="toggleSidebar()"><a routerLink="education">Edukasi</a></li>
+                    <li (click)="toggleSidebar()"><a routerLink="about">Tentang Kami</a></li>
+                    <li (click)="toggleSidebar()"><a routerLink="contact">Hubungi Kami</a></li>
+                </ul>
+            </ng-sidebar>
+            <div ng-sidebar-content class="sidebar">
+                <label class="logo"><a routerLink="beranda">CareKids</a></label>
+                <button (click)="toggleSidebar()" class="btn">
+                    <i class="bi bi-menu-app mt-0 fa-2x"></i>
+                </button>
+            </div>
+        </ng-sidebar-container>
+        <div class="navi">
+            <label class="logo"><a routerLink="beranda">CareKids</a></label>
+            <ul>
+                <li><a routerLink="beranda">Beranda</a></li>
+                <li><a routerLink="news">Berita</a></li>
+                <li><a routerLink="education">Edukasi</a></li>
+                <li><a routerLink="about">Tentang Kami</a></li>
+                <li><a routerLink="contact">Hubungi Kami</a></li>
+            </ul>
+        </div>
+
         <router-outlet></router-outlet>
         
         <div class="footer ">
@@ -21,32 +42,3 @@
         </div>
     </nav>
 </body>
-
-
-<!-- <body>
-    <div id="container">
-        <div class="navigation">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <label class="logo"><a routerLink="beranda">CareKids</a></label>
-            <ul>
-                <li><a routerLink="beranda">Beranda</a></li>
-                <li><a routerLink="news">Berita</a></li>
-                <li><a routerLink="education">Edukasi</a></li>
-                <li><a routerLink="about">Tentang Kami</a></li>
-                <li><a routerLink="contact">Hubungi Kami</a></li>
-            </ul>
-        </div> -->
-
-        <!-- <router-outlet></router-outlet> -->
-
-        <!-- <div class="footer ">
-            <div class="row">
-                <p class="copyright">Copyright &copy; 2023 All Rights Reserved by <a routerLink="beranda">CareKids</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</body> -->
