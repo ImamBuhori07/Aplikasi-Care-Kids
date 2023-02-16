@@ -11,8 +11,6 @@ import { DetailEducationComponent } from './detail-education/detail-education.co
 import { CommentsComponent } from './comments/comments.component';
 import { ImagesListComponent } from './images-list/images-list.component';
 import { SearchPipe } from './search.pipe';
-import { VideoComponent } from './video/video.component';
-
 
 @NgModule({
   declarations: [
@@ -21,7 +19,6 @@ import { VideoComponent } from './video/video.component';
     CommentsComponent,
     ImagesListComponent,
     SearchPipe,
-    VideoComponent,
   ],
   imports: [
     CommonModule,

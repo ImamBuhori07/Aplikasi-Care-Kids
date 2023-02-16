@@ -68,19 +68,19 @@
         <div class="time col-3" *ngFor="let data of setting">
             <ul class="list-unstyled">
                 <li class="title-call">
-                    <p>Jam Operasional<br>{{ data.waktu }}</p>
+                    <p>Jam Operasional<br>{{ data.time }}</p>
                 </li>
                 <li><i class="bi bi-telephone mt-0 fa-2x"></i>
-                    <a routerLink=""><p>{{ data.tlp }}</p></a>
+                    <a routerLink=""><p>{{ data.telp }}</p></a>
                 </li>
                 <li><i class="bi bi-whatsapp  mt-0 fa-2x"></i>
-                     <a routerLink=""><p>{{ data.tlp }}</p></a>
+                     <a routerLink=""><p>{{ data.telp }}</p></a>
                 </li>
                 <li><i class="bi bi-envelope mt-0 fa-2x"></i>
                     <a routerLink=""><p>{{ data.email }}</p></a>
                 </li>
                 <li><i class="bi bi-geo-alt mt-0 fa-2x"></i>
-                    <a routerLink=""><p>Jl. Soekarno Hatta, Bandung <br>Indonesia</p></a>
+                    <a routerLink=""><p>{{ data.address }}</p></a>
                 </li>
             </ul>
         </div>

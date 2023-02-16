@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Comment } from '../classes/comment';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, Observable, pipe, Subject, throwError } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EducationService {
+
 
   search = "http://127.0.0.1:8000/api/article/search/}";
   url = "http://127.0.0.1:8000/api/article/category/2";
@@ -15,6 +17,7 @@ export class EducationService {
   image = "http://127.0.0.1:8000/api/image/"
   education: any;
   constructor(private http: HttpClient) { }
+
 
   searchEducation(keyboard: string) {
     return this.http.get(this.search + keyboard);
@@ -30,20 +33,17 @@ export class EducationService {
     );
   }
 
-  getImage(article_id: string) {
+  getImage(article_id: string): Observable<any> {
     return this.http.get(this.image + article_id);
   }
 
-  postComment(CommentForm: Comment, article_id: string): Observable<Comment> {
+  postComment(CommentForm: Comment, article_id: string): Observable<any> {
     return this.http.post<Comment>(this.comment + '/' + article_id, CommentForm);
   }
 
-
-  getComment(article_id: string) {
+  getComment(article_id: string): Observable<any> {
     return this.http.get(this.comment + '/' + article_id);
   }
-
-
 
   private handleError(error: HttpErrorResponse) {
     let errorMessage = '';

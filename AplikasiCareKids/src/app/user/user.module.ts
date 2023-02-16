@@ -18,6 +18,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { EducationComponent } from './education/education.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CarouselComponent } from './beranda/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AboutComponent,
     EducationComponent,
     NotFoundComponent,
+    CarouselComponent,
+
   ],
   imports: [
     CommonModule,

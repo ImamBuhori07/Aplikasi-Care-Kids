@@ -1,12 +1,14 @@
 .card-comment {
-    display: flex;
+    display: block;
     height: auto;
     background-color: #f5f5f5;
     border-radius: 5px;
     overflow: hidden;
     margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 0px;
+    margin-left: 7%;
+    margin-right: 7%;
+    padding-left: 3%;
+    padding-right: 3%;
 
 }
 
@@ -14,80 +16,76 @@
     font-size: 18px;
     font-weight: 600;
     color: #000;
-    margin-top: 16px;
-    margin-left: 20px;
-    margin-right: 10px;
+    margin-top: 20px;
+    margin-left: 13px;
 }
 
 .card-comment .form {
     display: flex;
     width: 100%;
     height: auto;
-    padding: 10px;
     border: none;
     border-radius: 5px;
 }
 
-.form label{
+.form label {
     padding-left: 13px;
 }
 
-.form span{
+.form span {
     font-size: 14px;
     padding-left: 13px;
 }
 
-
-.card-output{
+.card-output {
     display: block;
     width: 100%;
     height: auto;
 
 }
 
-.btn:hover{
-    background-color:orange;
+.btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 13px;
+    height: 40px;
+    display: block;
+}
+
+.btn:hover {
+    background-color: orange;
     color: #000;
     font-weight: bold;
+
 }
 
-.commentList{
+.commentList {
     display: block;
     width: 100%;
     height: auto;
-    padding: 10px;
     border: none;
     border-radius: 5px;
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
     background-color: #f5f5f5;
-    border-radius: 5px;
     overflow: hidden;
 }
 
-.commentName{
+.commentName {
+    font-size: 16px;
+    color: #000;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.commentName p {
+    font-size: 14px;
+    color: #000;
+    text-align: right;
+    opacity: 0.5;
+}
+
+.commentMessage {
     font-size: 15px;
-    font-weight: 600;
-    color: #000;
-    margin-left: 20px;
-    margin-right: 10px;
-    text-align: right;
-}
-
-.commentName p{
-    font-size: 14px;
     font-weight: 400;
     color: #000;
-    margin-left: 20px;
-    text-align: right;
-}
-
-.commentMessage{
-    font-size: 14px;
-    font-weight: 400;
-    color: #000;
-    margin-left: 20px;
-    margin-right: 10px;
     text-align: left;
 }

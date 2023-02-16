@@ -14,6 +14,13 @@
             <p class="content">{{ data.content }}</p>
         </div>
         <app-images-list></app-images-list>
-        <app-video></app-video>
+<!-- video start -->
+        <div class="card-video">
+            <figure>
+                <iframe width="560" height="315" src="{{ data.video }}" frameborder="0"></iframe>
+            </figure>
+            <div class="play-icon-box"></div>
+        </div>
+<!-- video end -->
     </div>
     <detail-comments></detail-comments>

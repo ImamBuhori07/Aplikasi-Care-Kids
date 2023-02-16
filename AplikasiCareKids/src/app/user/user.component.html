@@ -1,8 +1,30 @@
 <body>
-    <div id="container">
-        <div class="header">
-
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="bi bi-menu-app"></i>
+        </label>
+        <label class="logo"><a routerLink="beranda">CareKids</a></label>
+        <ul>
+            <li><a routerLink="beranda">Beranda</a></li>
+            <li><a routerLink="news">Berita</a></li>
+            <li><a routerLink="education">Edukasi</a></li>
+            <li><a routerLink="about">Tentang Kami</a></li>
+            <li><a routerLink="contact">Hubungi Kami</a></li>
+        </ul>
+        <router-outlet></router-outlet>
+        
+        <div class="footer ">
+            <div class="row">
+            <p class="copyright">Copyright &copy; 2023 All Rights Reserved by <a routerLink="beranda">CareKids</a></p>
+            </div>
         </div>
+    </nav>
+</body>
+
+
+<!-- <body>
+    <div id="container">
         <div class="navigation">
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
@@ -11,26 +33,20 @@
             <label class="logo"><a routerLink="beranda">CareKids</a></label>
             <ul>
                 <li><a routerLink="beranda">Beranda</a></li>
-                <li routerLink="news"><a>Berita</a>
-                    <!-- <ul class="dropdown">
-                        <li><a routerLink="news">Berita</a></li>
-                        <li><a routerLink="">Info Anak Hilang</a></li>
-                    </ul> -->
-                </li>
+                <li><a routerLink="news">Berita</a></li>
                 <li><a routerLink="education">Edukasi</a></li>
                 <li><a routerLink="about">Tentang Kami</a></li>
                 <li><a routerLink="contact">Hubungi Kami</a></li>
             </ul>
-        </div>
+        </div> -->
 
-        <router-outlet></router-outlet>
+        <!-- <router-outlet></router-outlet> -->
 
-        <div class="footer ">
+        <!-- <div class="footer ">
             <div class="row">
-                <p class="copyright">Copyright &copy; 2023 All Rights Reserved by <a
-                        routerLink="beranda">CareKids</a>
+                <p class="copyright">Copyright &copy; 2023 All Rights Reserved by <a routerLink="beranda">CareKids</a>
                 </p>
             </div>
         </div>
     </div>
-</body>
+</body> -->

@@ -26,6 +26,8 @@ export class HomeComponent implements OnInit {
         } else {
           return 0;
         }
+      }).filter((item: any) => {
+        return item['status'] == 'Publish';
       });
       this.allNews = this.news;
     });
