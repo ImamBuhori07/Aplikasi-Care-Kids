@@ -23,11 +23,11 @@ export class LoginComponent implements OnInit {
       (result) => {
        console.log('login success', this.onSubmit)
        alert('Login Berhasil')
-       this.route.navigate(['dashboard'])
+       this.route.navigate(['/admin/dashboard'])
       },
       (error) => {
       console.log('Login failed:', error);
-      alert('Login Failed. Wrong email or unregistered.');
+      alert('Email dan Password Tidak Terdaftar.');
       }
     )
   }

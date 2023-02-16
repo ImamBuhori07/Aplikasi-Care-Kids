@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Admin , Category , saveCategory} from './admin.model';
 import { environment } from 'src/environments/environment';
 import { response } from 'express';
+import { Observable } from 'rxjs';
 
 
 
@@ -10,31 +11,31 @@ import { response } from 'express';
   providedIn: 'root'
 })
 export class AdminService {
-  category() {
-    throw new Error('Method not implemented.');
-  }
+    get<T>(arg0: string) {
+      throw new Error('Method not implemented.');
+    }
+ 
+    private baseUrl = 'http://127.0.0.1:8000';
 
-  constructor(private http: HttpClient) { }
-
-        // getcategory(){
-        //   return this.http.get<Category[]>(`${environment.baseUrl}/api/category`)
-        // }
-    
-        // tambahcategory(category:saveCategory){
-        //   return this.http.post<Category[]>(`${environment.baseUrl}/api/category`,category, {observe: "response"})
-        // }
-
-        // updatecategory(category:saveCategory){
-        //   return this.http.put(`${environment.baseUrl}/category`,category, {observe:"response"})
-        // }
-
-        // deletecategory(name_category: string){
-        //   return this.http.delete(`${environment.baseUrl}/name_category/delete/${Category}`,{observe:"response"})
-        // }
+    constructor(private http:HttpClient){}
 
 
-        
 
+    getCategories<T>(url : String): Observable<T> {
+        return this.http.get<T>(`${this.baseUrl}/${url}`);
+    }
+
+    buatCategories<T>(url : String, data : any): Observable<T> {
+        return this.http.post<T>(`${this.baseUrl}/${url}`,data);
+    }
+
+    updatecategories<T>(url : String, data : any): Observable<T> {
+        return this.http.put<T>(`${this.baseUrl}/${url}`, data);
+    }
+
+    deletecategories<T>(url : string): Observable<T> {
+      return this.http.delete<T>(`${this.baseUrl}/${url}`);
+    }
 
 
 }
