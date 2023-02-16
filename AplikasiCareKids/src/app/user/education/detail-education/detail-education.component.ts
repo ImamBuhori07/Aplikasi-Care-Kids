@@ -19,7 +19,7 @@ export class DetailEducationComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
     id && this.detailData.getEducationById(id).subscribe((res: any) => {
       this.education = Array.of(res.data);
-      console.warn(this.education);
+      console.log(this.education);
     }, (err: any) => {
       console.warn(err);
     });

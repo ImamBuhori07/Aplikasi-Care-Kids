@@ -12,7 +12,6 @@ import { CommentsComponent } from './comments/comments.component';
 import { ImagesListComponent } from './images-list/images-list.component';
 import { SearchPipe } from './search.pipe';
 
-
 @NgModule({
   declarations: [
     HomeComponent,

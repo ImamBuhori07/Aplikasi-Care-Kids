@@ -7,11 +7,16 @@ import { HttpClient } from '@angular/common/http';
 export class BerandaService {
 
 
-  urlAll = 'http://127.0.0.1:8000/api/article/';
+  url = 'http://127.0.0.1:8000/api/article/';
+  carousels = 'http://127.0.0.1:8000/api/carousel';
 
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get(this.urlAll);
+    return this.http.get(this.url);
+  }
+
+  getCarousel() {
+    return this.http.get(this.carousels);
   }
 }

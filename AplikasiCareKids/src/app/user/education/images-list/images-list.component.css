@@ -1,12 +1,15 @@
-/* .img-gallery {
-    width: 80%;
+.imgList{
+    width: 100%;
+    max-width: 95%;
     margin: 30px auto 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px; 
 }
 
-.img-gallery img {
+.imgList img{
     width: 100%;
-    cursor: pointer;
-} */
+    height: 100%;
+    border-radius: 10px;
+    margin-left: -60px;
+}
