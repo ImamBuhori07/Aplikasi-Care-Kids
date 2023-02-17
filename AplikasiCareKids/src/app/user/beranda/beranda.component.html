@@ -2,7 +2,7 @@
     <div class="row col-12">
         <div class="slider">
             <!-- [carousel]="carousels" [autoSlide]="true" -->
-            <app-carousel  [slideInterval]="7000"></app-carousel>
+            <app-carousel [carousel]="carousels" [autoSlide]="true" [slideInterval]="7000"></app-carousel>
         </div>
         <div class="postingan col-9">
             <div class="title-home">
@@ -11,7 +11,7 @@
             <div class="card-deck">
                 <div class="card"
                     *ngFor="let data of beranda | paginate: { itemsPerPage: 9, currentPage: page }">
-                    <div class="blog-image" routerLink="/{{ data.category }}/detail/{{ data.id }}">
+                    <div class="blog-image">
                         <img src="{{ data.thumbnail }}">
                     </div>
             
