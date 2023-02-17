@@ -38,19 +38,13 @@ export class RegisterComponent implements OnInit{
 
     onsubmit(formValue: {email:string,full_name:string,password:string,password_confirmation:string}){
     
-      // if (this.registerform.invalid){
-      //   return;
-      // }
+      
       this.authservice.register(formValue.email,formValue.full_name,formValue.password,formValue.password_confirmation).subscribe(() => {
-        this.router.navigate(['/login'])
+        this.router.navigate(['/auth/login']);
+        this.registerform.reset();
       });
 
     }
-   
-
-      // const {email,fullname,password,password_confirmation} = this.registerform.value;
-      // const registerdata: register = {email,fullname,password,password_confirmation};
-      // this.authservice.register(registerdata)
       
     }
 

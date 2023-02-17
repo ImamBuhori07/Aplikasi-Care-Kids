@@ -32,11 +32,8 @@
     "ngx-mat-select-search": "^7.0.0",
     "ngx-order-pipe": "^2.2.0",
     "ngx-pagination": "^6.0.3",
-<<<<<<< HEAD
     "popper.js": "^1.16.1",
-=======
     "ngx-youtube-player": "^12.0.2",
->>>>>>> b9a86682cd55c7b87d2ede7d7c8a9f5be4a285d6
     "rxjs": "~7.5.0",
     "save": "^2.9.0",
     "tslib": "^2.3.0",
