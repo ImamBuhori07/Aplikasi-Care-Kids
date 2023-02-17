@@ -2,7 +2,7 @@
     <div class="row col-12">
         <div class="slider">
             <!-- [carousel]="carousels" [autoSlide]="true" -->
-            <app-carousel [carousel]="carousels" [autoSlide]="true" [slideInterval]="7000"></app-carousel>
+            <!-- <app-carousel [carousel]="carousels" [autoSlide]="true" [slideInterval]="7000"></app-carousel> -->
         </div>
         <div class="postingan col-9">
             <div class="title-home">
@@ -16,9 +16,9 @@
                     </div>
             
                     <div class="blog-content">
-                        <div class="blog-title" routerLink="/{{ data.category }}/detail/{{ data.id }}">{{ data.title }}</div>
+                        <!-- <div class="blog-title" routerLink="/{{ data.category }}/detail/{{ data.id }}">{{ data.title }}</div> -->
                         <div class="blog-category">{{ data.category }}</div>
-                        <p class="blog-desc">{{ data.description }} <a routerLink="/{{ data.category }}/detail/{{ data.id }}">Read More</a></p>
+                        <!-- <p class="blog-desc">{{ data.description }} <a routerLink="/{{ data.category }}/detail/{{ data.id }}">Read More</a></p> -->
                         <div class="blog-footer">
                             <div class="blog-avatar"><img src="{{ data.author_profile }}"></div>
                             <div>
@@ -33,7 +33,7 @@
             </div>
 
             <div>
-                <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+                <!-- <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls> -->
             </div>
         </div>
 
@@ -45,7 +45,7 @@
                 <div class="top-article">
                     <ul class="list-group" >
                         <li class="list-group-item" *ngFor="let data of education">
-                        <a class="" routerLink="/{{ data.category }}/detail/{{ data.id }}">{{ data.title }}</a>
+                        <!-- <a class="" routerLink="/{{ data.category }}/detail/{{ data.id }}">{{ data.title }}</a> -->
                         </li>
                     </ul>
                 </div>
