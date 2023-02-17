@@ -165,7 +165,6 @@
 .top{
     margin-bottom: 10px;
 }
-
 /*top article */
 .top-article {
     flex-wrap: wrap;
@@ -197,7 +196,6 @@
     text-decoration: none;
     color: #000;
     font-size: 14px;
-    padding: 10px;
 }
 /*end top article */
 /*card-about */
@@ -206,11 +204,9 @@
 }
 
 .card-about {
-    flex-wrap: wrap;
-    justify-content: space-between;
     margin: 5px;
     margin-left: 20px;
-    display: grid;
+
 }
 
 .card-about .img {
@@ -218,12 +214,15 @@
     height: 100%;
 }
 
-.card-about>.img>img {
+.card-about .img img {
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 100px;
-    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    margin-left: 24%;
 }
 
 .card-about>.card-body {

@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'beranda',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    title: 'Beranda'
   },
   {
     path: '',
@@ -22,7 +23,8 @@ const routes: Routes = [
     children: [
       {
         path: 'beranda',
-        component: BerandaComponent
+        component: BerandaComponent,
+        title: 'Beranda'
       },
       {
         path: 'news',
@@ -35,11 +37,13 @@ const routes: Routes = [
       },
       {
         path: 'about',
-        component: AboutComponent
+        component: AboutComponent,
+        title: 'Tentang Kami'
       },
       {
         path: 'contact',
-        component: ContactComponent
+        component: ContactComponent,
+        title: 'Kontak Kami'
       },
       // {
       //   path: '**',

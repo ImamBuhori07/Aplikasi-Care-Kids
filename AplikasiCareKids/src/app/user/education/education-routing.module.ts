@@ -18,11 +18,13 @@ const routes: Routes = [
         children: [
             {
                 path: '',
-                component: HomeComponent
+                component: HomeComponent,
+                title: 'Edukasi'
             },
             {
                 path: 'detail/:id',
-                component: DetailEducationComponent
+                component: DetailEducationComponent,
+                title: 'Detail Edukasi'
             },
         ]
     },
