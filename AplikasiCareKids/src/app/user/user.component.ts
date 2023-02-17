@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
+  opened = false;
 
+  toggleSidebar() {
+    this.opened = !this.opened;
+  }
 }

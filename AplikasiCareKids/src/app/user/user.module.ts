@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SidebarModule } from 'ng-sidebar';
 
 //my modules
 import { moduleMe } from './modules/modules';
@@ -35,6 +36,7 @@ import { CarouselComponent } from './beranda/carousel/carousel.component';
   imports: [
     CommonModule,
     UserRoutingModule,
+    SidebarModule.forRoot(),
     moduleMe
   ],
   providers: [ContactService],
