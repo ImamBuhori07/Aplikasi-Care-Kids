@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Routes } from '@angular/router';
+import { Component, NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { BeritaComponent } from './berita/berita.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -47,4 +47,10 @@ export const routes: Routes = [
   }
 ];
 
+
+// @NgModule({
+//   imports: [RouterModule.forChild(routes)],
+//   exports: [RouterModule]
+// })
+// export class AdminRoutingModule { }
 
