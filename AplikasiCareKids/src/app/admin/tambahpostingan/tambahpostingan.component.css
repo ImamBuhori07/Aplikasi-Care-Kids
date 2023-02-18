@@ -48,6 +48,11 @@ label.dua{
     margin-top: 110px;
     margin-left: -20px;
 }
+label.tiga{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -30px;
+}
 
 #writer {
     position: absolute;
@@ -59,7 +64,7 @@ label.dua{
 #rise {
     position: absolute;
     border-radius: 10px;
-    margin-top: 140px;
+    margin-top: 150px;
     margin-left: -100px;
     border: 1px solid black;
 }

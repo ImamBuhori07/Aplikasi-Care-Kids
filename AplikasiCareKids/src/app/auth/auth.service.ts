@@ -28,12 +28,12 @@ export class AuthService {
 
   register(email: string,full_name: string, password: string,password_confirmation: string): Observable<any> {
     return this.http.post(`${AUTH_API}register`,{ email,full_name,password,password_confirmation}, httpOptions)
-    // .pipe(
-    //   catchError(error => {
-    //     console.log(error);
-    //     return of (null)
-    //   })
-    // );
+    .pipe(
+      catchError(error => {
+        console.log(error);
+        return of (null)
+      })
+    );
   }
 
   logout():Observable<any>{
