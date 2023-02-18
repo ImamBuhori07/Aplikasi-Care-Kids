@@ -4,6 +4,7 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 nav {
@@ -54,6 +55,11 @@ nav ul li a {
 
 nav ul li a:hover {
     background: orange;
+}
+
+.active{
+    background: orange;
+    transition: .5s;
 }
 
 ng-sidebar-container {

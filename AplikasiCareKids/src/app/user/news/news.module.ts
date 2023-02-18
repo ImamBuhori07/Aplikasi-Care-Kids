@@ -25,11 +25,13 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        title: 'Berita'
       },
       {
         path: 'detail/:id',
-        component: DetailNewsComponent
+        component: DetailNewsComponent,
+        title: 'Detail Berita'
       },
     ]
   },
