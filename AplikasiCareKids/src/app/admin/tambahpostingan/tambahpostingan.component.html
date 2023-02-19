@@ -1,4 +1,4 @@
-
+<!-- 
 <h3>{{judul}}</h3>
 
 <form action="">
@@ -13,12 +13,63 @@
         <label for="terbit" class="dua fw-bold">Terbit</label>
         <input type="text" id="rise" style="width: 200px; background-color: yellow;">
         <label for="terbit" class="tiga fw-bold">Kategori</label>
-        <!-- <input type="text" id="category" style="width: 200px; background-color: yellow;"> -->
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Kategori</option>
+          <option value="1">Edukasi</option>
+          <option value="2">Berita</option>
+        </select>
       </div>
       <button type="submit" class="btn btn-primary upload">Terbitkan</button>
       <button type="submit" class="btn btn-warning draft">Draft</button>
     </div>
-</form>
+</form> -->
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">{{judul}}</h3>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group mb-4">
+              <label for="title">Judul</label>
+              <input type="text" class="form-control" id="title" placeholder="Masukkan judul">
+            </div>
+            <div class="form-group mb-4">
+              <label for="content">Isi Postingan</label>
+              <textarea class="form-control" id="content" rows="10" placeholder="Tulis sesuatu atau klik “+” untuk memunculkan menu"></textarea>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <label for="writer">Penulis</label>
+                <input type="text" class="form-control" id="writer" placeholder="Masukkan nama penulis">
+              </div>
+              <div class="col-md-6">
+                <label for="date">Tanggal Terbit</label>
+                <input type="date" class="form-control" id="date">
+              </div>
+            </div>
+            <div class="form-group mb-4">
+              <label for="category">Kategori</label>
+              <select class="form-control" id="category">
+                <option value="edukasi">Edukasi</option>
+                <option value="berita">Berita</option>
+              </select>
+            </div>
+            <div class="form-group mb-4">
+              <label for="image">Gambar Postingan</label>
+              <input type="file" class="form-control-file" id="image">
+            </div>
+            <button type="submit" class="btn btn-primary mr-2">Terbitkan</button>
+            <button type="submit" class="btn btn-secondary">Simpan sebagai Draft</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   
 
    

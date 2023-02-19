@@ -6,8 +6,8 @@ import { EdukasiComponent } from './edukasi/edukasi.component';
 import { PesanComponent } from './pesan/pesan.component';
 import { AdminComponent } from './admin.component';
 import { TambahpostinganComponent } from './tambahpostingan/tambahpostingan.component';
-import { AppRoutingModule } from '../app-routing.module';
-// import { AdminRoutingModule } from './admin-routing.module';
+import { AdminRoutingModule } from './admin-routing.module';
+
 
 
 @NgModule({
@@ -21,8 +21,7 @@ import { AppRoutingModule } from '../app-routing.module';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
-    // AdminRoutingModule
+    AdminRoutingModule
   ]
 })
 export class AdminModule { }

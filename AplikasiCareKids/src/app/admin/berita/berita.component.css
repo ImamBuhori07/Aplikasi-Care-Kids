@@ -1,62 +1,65 @@
-h2 {
-    position: absolute;
-    margin-top: 60px;
-}
-
-p {
-    position: absolute;
-    margin-top: 136px;
-}
-
-.status {
-    position: absolute;
-    box-sizing: border-box;
-    background: #3C6BC6;
-    line-height: 20px;
-    width: 1100px;
-    height: 60px;
-    margin-top: 220px;
-    padding: 5px 5px;
-}
-
-#s {
-    position: absolute;
-    line-height: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 20px;
-}
-
-#cari {
-    position: absolute;
-    margin-top: 232px;
-    margin-left: 825px;
-}
-
-a.terbit  {
-    right: px;
-}
-
-a.draft {
-    right: 890px;
-}
-
-a.sampah {
-    right: 750px;
+.container {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 table {
-    position: absolute;
-    width: 1100px;
-    margin-top: 290px;
- 
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .btn {
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .btn-success {
+    background-color: green;
+    color: white;
+  }
+  
+  .btn-danger {
+    background-color: red;
+    color: white;
+  }
+  
+  .btn-warning {
+    background-color: orange;
+    color: white;
+  }
 
+.Publish {
+    margin-left: 3px;
 }
-
-button#add {
-    position: absolute;
-    border-radius: 10px;
-    margin-top: 175px;
-    margin-left: 1000px;
+.Draft {
+    margin-left: 10px;
 }
-
+.Trash {
+    margin-left: 15px;
+}
