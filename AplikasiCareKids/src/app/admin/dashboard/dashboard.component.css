@@ -1,13 +1,14 @@
 .container {
-    padding-top: 10px;
-    padding-bottom: 40px;
+    padding-top: 5px;
+    padding-bottom: 90px;
 }
 
 .welcome-text {
-    margin-top: 50px;
+    margin-top: 40px;
   }
   
   .visitor-box, .comment-box, .message-box {
+    margin-top: -30px;
     border-radius: 10px;
     transition: all 0.2s ease-in-out;
   }

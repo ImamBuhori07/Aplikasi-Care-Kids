@@ -40,6 +40,7 @@ table {
   }
   
   .btn-success {
+    margin-top: 10px;
     background-color: green;
     color: white;
   }
@@ -53,7 +54,6 @@ table {
     background-color: orange;
     color: white;
   }
-
   
 .Publish {
     margin-left: 3px;
@@ -63,4 +63,10 @@ table {
 }
 .Trash {
     margin-left: 15px;
+}
+
+#cari {
+    width: 350px;
+    position: absolute ;
+    margin-left: 760px;
 }

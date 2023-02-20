@@ -7,6 +7,7 @@ import { PesanComponent } from './pesan/pesan.component';
 import { AdminComponent } from './admin.component';
 import { TambahpostinganComponent } from './tambahpostingan/tambahpostingan.component';
 import { AdminRoutingModule } from './admin-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +22,8 @@ import { AdminRoutingModule } from './admin-routing.module';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule
   ]
 })
 export class AdminModule { }
