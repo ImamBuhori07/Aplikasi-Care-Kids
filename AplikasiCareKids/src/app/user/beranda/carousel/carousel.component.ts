@@ -15,7 +15,6 @@ export class CarouselComponent implements OnInit {
   constructor(private carouselsData: BerandaService) {
     this.carouselsData.getCarousel().subscribe((res: any) => {
       this.carousels = res.data;
-      console.warn(res);
     });
   }
 

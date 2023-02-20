@@ -13,18 +13,10 @@ import { Observable } from 'rxjs';
 })
 export class BerandaComponent implements OnInit {
 
-  carousels = [
-    { path: 'assets/images/beranda/1.jpg' },
-    { path: 'assets/images/beranda/2.jpg' },
-    { path: 'assets/images/beranda/3.jpg' },
-    { path: 'assets/images/beranda/4.jpg' },
-    { path: 'assets/images/beranda/5.jpg' },
-  ];
-
+  carousels = [];
   page: number = 1;
   beranda: any;
   top: any;
-  // news: any;
   education: any;
   about: any;
 
@@ -42,22 +34,7 @@ export class BerandaComponent implements OnInit {
       }).filter((item: any) => {
         return item['status'] == 'Publish';
       });
-      console.warn(res);
     });
-
-    // this.newsData.getNews().subscribe((res: any) => {
-    //   this.news = res.data;
-    //   this.news = res.data.sort((a: any, b: any) => {
-    //     if (a['created_at'] > b['created_at']) {
-    //       return -1;
-    //     } else if (a['created_at'] < b['created_at']) {
-    //       return 1;
-    //     } else {
-    //       return 0;
-    //     }
-    //   });
-    //   console.warn(res);
-    // });
 
     this.educationData.getEducation().subscribe((res: any) => {
       this.education = res.data;
@@ -72,17 +49,21 @@ export class BerandaComponent implements OnInit {
       }).filter((item: any) => {
         return item['status'] == 'Publish';
       }).slice(0, 5);
-      console.warn(res);
     });
 
     this.aboutData.getAbout().subscribe((res: any) => {
       this.about = res.data;
-      console.warn(res);
     });
   }
 
   ngOnInit(): void {
+    this.getCarousel();
+  }
 
+  getCarousel() {
+    this.berandaData.getCarousel().subscribe((res: any) => {
+      this.carousels = res.data;
+    });
   }
 
 }
