@@ -1,60 +1,36 @@
 
- <section class="main">
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-        <h2 class="fw-bold" style="font-size: 42px;">Postingan Berita</h2>
-        <P class="fw-bold" style="font-size: 24px;">Buat ubah dan hapus postingan website mu disini</P>
-        <div class="status text-white">
-        <a href="#" class="text-decoration-none text-white terbit" id="s">Diterbitkan</a>
-        <a href="#" class="text-decoration-none text-white draft" id="s">Draft</a>
-        <a href="#" class="text-decoration-none text-white sampah" id="s">Sampah</a>
-    </div>
-    <form class="d-flex" role="search" id="cari">
-        <input class="form-control me-2 w-100 h-50" type="search" placeholder="Search" aria-label="Search">
-        <a href=""><i class="bi bi-search fa-2x" style="color: #fafafa;"></i></a>
-    </form>
-      <button class="btn btn-success" id="add" [routerLink]="">Tambah</button>
-      <table class="table table-bordered">
-        <thead class="text-center" style="color: #fafafa; background: royalblue;">
-            <tr>
-                <th>No</th>
-                <th>Postingan</th>
-                <th class="text-center">Aksi</th>
-            </tr>
-        </thead>
-        <tbody class="text-center">
-            <tr>
-                <td>1</td>
-                <td>Lorem ipsum dolor sit amet</td>
-                <td>
-                    <button class="btn btn-success btn-sm me-2 edit">Edit</button>
-                    <button class="btn btn-danger btn-sm me-2 delete">Hapus</button>
-                    <button class="btn btn-warning btn-sm detail">Detail</button>
-                </td>
-            </tr>
-             <tr>
-                <td>2</td>
-                <td>Lorem ipsum dolor sit amet</td>
-                <td>
-                    <button class="btn btn-success btn-sm me-2 edit">Edit</button>
-                    <button class="btn btn-danger btn-sm me-2 delete">Hapus</button>
-                    <button class="btn btn-warning btn-sm detail">Detail</button>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Lorem ipsum dolor sit amet</td>
-                <td>
-                    <button class="btn btn-success btn-sm me-2 edit">Edit</button>
-                    <button class="btn btn-danger btn-sm me-2 delete">Hapus</button>
-                    <button class="btn btn-warning btn-sm detail">Detail</button>
-                </td>
-            </tr>
-        </tbody>
-      </table>
-     </div>
-   </div>
- </div>
-</section>
-    
+     <section class="main">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="fw-bold" style="font-size: 42px;">Postingan Berita</h2>
+              <div class="Status-Post">
+                <span class="text-decoration-none Publish">Diterbitkan</span>
+                <span class="text-decoration-none Draft">Draft</span>
+                <span class="text-decoration-none Trash">Sampah</span>
+              </div>
+              <form class="d-flex" role="search" id="cari">
+                <input class="form-control me-2 w-10 h-50" type="search" placeholder="Search" aria-label="Search">
+                <a href=""><i class="bi bi-search fa-2x"></i></a>
+              </form>
+              <button class="btn btn-success" id="Add">Tambah</button>
+              <table class="table table-bordered">
+                <thead class="text-center" style="color: #fafafa; background: royalblue;">
+                  <tr>
+                    <th>No</th>
+                    <th>Judul</th>
+                    <th>Kategori</th>
+                    <th>Isi Postingan</th>
+                    <th>Tanggal</th>
+                    <th class="text-center">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody class="text-center" id="table-body">
+                  <!-- Data inputan dari form tambah postingan akan muncul di sini -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      

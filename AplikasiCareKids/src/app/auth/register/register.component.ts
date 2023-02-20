@@ -37,7 +37,10 @@ export class RegisterComponent implements OnInit{
       }
 
     onsubmit(formValue: {email:string,full_name:string,password:string,password_confirmation:string}){
-    
+      if (!formValue.email || !formValue.full_name || !formValue.password || !formValue.password_confirmation) {
+        alert('Silahkan lengkapi semua kolom untuk melakukan registrasi');
+        return;
+      }
       
       this.authservice.register(formValue.email,formValue.full_name,formValue.password,formValue.password_confirmation).subscribe(() => {
         this.router.navigate(['/auth/login']);

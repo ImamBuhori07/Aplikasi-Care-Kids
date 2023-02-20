@@ -7,7 +7,7 @@ import { EdukasiComponent } from './edukasi/edukasi.component';
 import { PesanComponent } from './pesan/pesan.component';
 import { TambahpostinganComponent } from './tambahpostingan/tambahpostingan.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
@@ -47,8 +47,10 @@ const routes: Routes = [
   }
 ];
 
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class AdminRoutingModule { }
+

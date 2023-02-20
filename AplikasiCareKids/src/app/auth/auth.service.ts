@@ -17,6 +17,8 @@ import { RegisterComponent } from './register/register.component';
   providedIn: 'root'
 })
 export class AuthService {
+
+  private TOKEN_KEY = 'CAREKIDS_TOKEN'
   constructor(private http:HttpClient, private cookieservice:CookieService) {}
 
   login(email: string, password: string): Observable<any> {
@@ -28,12 +30,12 @@ export class AuthService {
 
   register(email: string,full_name: string, password: string,password_confirmation: string): Observable<any> {
     return this.http.post(`${AUTH_API}register`,{ email,full_name,password,password_confirmation}, httpOptions)
-    // .pipe(
-    //   catchError(error => {
-    //     console.log(error);
-    //     return of (null)
-    //   })
-    // );
+    .pipe(
+      catchError(error => {
+        console.log(error);
+        return of (null)
+      })
+    );
   }
 
   logout():Observable<any>{
@@ -47,15 +49,15 @@ export class AuthService {
   }
 
   setToken(token:string):void{
-    this.cookieservice.set('token',token);
+    localStorage.setItem(this.TOKEN_KEY,token);
   }
 
-  gettoken():string{
-    return this.cookieservice.get('token')
+  gettoken():string | null{
+    return localStorage.getItem(this.TOKEN_KEY);
   }
 
   removetoken():void{
-    this.cookieservice.delete('token')
+    localStorage.removeItem('token')
   }
 
 }
