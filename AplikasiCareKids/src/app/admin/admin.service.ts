@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { Admin , article, Category , savearticle, saveCategory, savestatusarticle, statusarticle} from './admin.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Admin, article, Category, savearticle, saveCategory, savestatusarticle, statusarticle } from './admin.model';
 import { environment } from 'src/environments/environment';
 
 
@@ -9,57 +9,57 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AdminService {
- 
 
-    constructor(private http:HttpClient){}
 
-    listarticle(){
-      return this.http.get<article[]>(`${environment.baseUrl}/api/article`)
-    }
+  constructor(private http: HttpClient) { }
 
-    savearticle(article: savearticle){
-      return this.http.post(`${environment.baseUrl}/api/article`, article, {observe : "response"})
-    }
+  listArticle() {
+    return this.http.get<article[]>(`${environment.baseUrl}/api/article`)
+  }
 
-    FindarticleById(articleId : number){
-      return this.http.get<article[]>(`${environment.baseUrl}/api/article/${articleId}`)
-    }
+  savearticle(article: savearticle) {
+    return this.http.post(`${environment.baseUrl}/api/article`, article, { observe: "response" })
+  }
 
-    deletearticle(articleId : number){
-      return this.http.delete(`${environment.baseUrl}/api/article/${articleId}`, {observe : "response"})
-    }
+  FindarticleById(articleId: number) {
+    return this.http.get<article[]>(`${environment.baseUrl}/api/article/${articleId}`)
+  }
 
-    getReadArticlebyUser(author : string){
-      return this.http.get<article>(`${environment.baseUrl}/api/article/user/${author}`)
-    }
+  deletearticle(articleId: number) {
+    return this.http.delete(`${environment.baseUrl}/api/article/${articleId}`, { observe: "response" })
+  }
 
-    listcategory(){
-      return this.http.get<Category[]>(`${environment.baseUrl}/api/category`)
-    }
+  getReadArticlebyUser(author: string) {
+    return this.http.get<article>(`${environment.baseUrl}/api/article/user/${author}`)
+  }
 
-    savecategory(category : saveCategory){
-      return this.http.post(`${environment.baseUrl}/api/category`, category, {observe : "response"})
-    }
-    
-    updatecategory(category : saveCategory){
-      return this.http.put(`${environment.baseUrl}/api/category`, category, {observe : "response"})
-    }
+  listcategory() {
+    return this.http.get<Category[]>(`${environment.baseUrl}/api/category`)
+  }
 
-    deletecategory(category_id : number){
-      return this.http.delete(`${environment.baseUrl}/api/category/${category_id}`, {observe : "response"})
-    }
+  savecategory(category: saveCategory) {
+    return this.http.post(`${environment.baseUrl}/api/category`, category, { observe: "response" })
+  }
 
-    liststatuscategory(){
-      return this.http.get<statusarticle[]>(`${environment.baseUrl}/api/status`)
-    }
+  updatecategory(category: saveCategory) {
+    return this.http.put(`${environment.baseUrl}/api/category`, category, { observe: "response" })
+  }
 
-    savestatusarticle(statusarticle : savestatusarticle){
-      return this.http.post(`${environment.baseUrl}/api/status`, statusarticle, {observe : "response"})
-    }
+  deletecategory(category_id: number) {
+    return this.http.delete(`${environment.baseUrl}/api/category/${category_id}`, { observe: "response" })
+  }
 
-    updatestatusarticle(statusarticle : savestatusarticle){
-      return this.http.put(`${environment.baseUrl}/api/status`, statusarticle, {observe : "response"})
-    }
+  liststatuscategory() {
+    return this.http.get<statusarticle[]>(`${environment.baseUrl}/api/status`)
+  }
 
-  
+  savestatusarticle(statusarticle: savestatusarticle) {
+    return this.http.post(`${environment.baseUrl}/api/status`, statusarticle, { observe: "response" })
+  }
+
+  updatestatusarticle(statusarticle: savestatusarticle) {
+    return this.http.put(`${environment.baseUrl}/api/status`, statusarticle, { observe: "response" })
+  }
+
+
 }
