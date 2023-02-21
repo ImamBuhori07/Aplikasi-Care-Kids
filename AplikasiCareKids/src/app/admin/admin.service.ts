@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { Admin , article, Category , savearticle, saveCategory} from './admin.model';
+import { Admin , article, Category , savearticle, saveCategory, savestatusarticle, statusarticle} from './admin.model';
 import { environment } from 'src/environments/environment';
-import { response } from 'express';
-import { Observable } from 'rxjs';
 
 
 
@@ -12,79 +10,56 @@ import { Observable } from 'rxjs';
 })
 export class AdminService {
  
-    private baseUrl = 'http://127.0.0.1:8000';
 
     constructor(private http:HttpClient){}
 
-    getCategories(url : String) {
-        return this.http.get(`${this.baseUrl}/${url}`);
-    }
-
-    buatCategories(url : String, data : any) {
-        return this.http.post(`${this.baseUrl}/${url}`,data);
-    }
-
-    updatecategories(url : String, data : any) {
-        return this.http.put(`${this.baseUrl}/${url}`, data);
-    }
-
-    deletecategories(url : string) {
-      return this.http.delete(`${this.baseUrl}/${url}`);
-    }
-
-    getarticles(url : string){
-      return this.http.get(`${this.baseUrl}/${url}`);
-    }
-
-    getarticlesbycategory(Category_id : number){
-      return this.http.get(`${this.baseUrl}/article/category/${Category_id}`);
-    }
-
-    getarticlesbystatus(status : string){
-      return this.http.get(`${this.baseUrl}/getarticlebystatus/${status}`);
-    }
-
-    getarticlesbyuser(userId : number){
-      return this.http.get(`${this.baseUrl}/article/user/${userId}`);
-    }
-
-    getarticlestrash():Observable<any>{
-      return this.http.get(`${this.baseUrl}/getarticletrash`);
-    }
-
-    getforcedelete(id:number): Observable<any>{
-      return this.http.get(`${this.baseUrl}/getforcedelete/${id}`);
+    listarticle(){
+      return this.http.get<article[]>(`${environment.baseUrl}/api/article`)
     }
 
     savearticle(article: savearticle){
-      return this.http.post(`${environment.baseUrl}/article/save`, article,{observe : "response"})
+      return this.http.post(`${environment.baseUrl}/api/article`, article, {observe : "response"})
     }
 
-    updatearticles(url : String, data : any) {
-        return this.http.put(`${this.baseUrl}/${url}`, data);
+    FindarticleById(articleId : number){
+      return this.http.get<article[]>(`${environment.baseUrl}/api/article/${articleId}`)
     }
 
-    deletearticles(url : string) {
-      return this.http.delete(`${this.baseUrl}/${url}`);
+    deletearticle(articleId : number){
+      return this.http.delete(`${environment.baseUrl}/api/article/${articleId}`, {observe : "response"})
     }
 
-    searchbytitle(searchtitle: string):Observable<any>{
-      const url = `${this.baseUrl}/searchbytitle?searchtitle=${searchtitle}`
-      return this.http.get(url);
+    getReadArticlebyUser(author : string){
+      return this.http.get<article>(`${environment.baseUrl}/api/article/user/${author}`)
     }
 
-    restorearticles():Observable<any>{
-      return this.http.post(`${this.baseUrl}/restorearticle`,{});
+    listcategory(){
+      return this.http.get<Category[]>(`${environment.baseUrl}/api/category`)
     }
 
-    uploadimage(imagefile: File): Observable<any>{
-      const formData = new FormData();
-      formData.append('image', imagefile, imagefile.name);
-
-      const headers = new HttpHeaders();
-      headers.append('Content-Type', 'application/json'); 
-      return this.http.post(`${this.baseUrl}/postuploadimage`, formData, {headers});
+    savecategory(category : saveCategory){
+      return this.http.post(`${environment.baseUrl}/api/category`, category, {observe : "response"})
+    }
+    
+    updatecategory(category : saveCategory){
+      return this.http.put(`${environment.baseUrl}/api/category`, category, {observe : "response"})
     }
 
+    deletecategory(category_id : number){
+      return this.http.delete(`${environment.baseUrl}/api/category/${category_id}`, {observe : "response"})
+    }
 
+    liststatuscategory(){
+      return this.http.get<statusarticle[]>(`${environment.baseUrl}/api/status`)
+    }
+
+    savestatusarticle(statusarticle : savestatusarticle){
+      return this.http.post(`${environment.baseUrl}/api/status`, statusarticle, {observe : "response"})
+    }
+
+    updatestatusarticle(statusarticle : savestatusarticle){
+      return this.http.put(`${environment.baseUrl}/api/status`, statusarticle, {observe : "response"})
+    }
+
+  
 }

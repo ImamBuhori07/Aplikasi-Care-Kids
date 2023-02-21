@@ -5,36 +5,54 @@ export class Admin {
 
 
 export class Category {
-      
-      name_category:string="";
+      category_id:number=1
+      name_category: string ="" 
+      deleted_at: string =""
+      created_at: string =""
+      updated_at: string =""
       
 }
 
 export class saveCategory {
-      
-      name_category:string="";
+      category_id: number=1
+      name_category: string ="" 
+      deleted_at: string=""
+      created_at: string =""
+      updated_at: string =""
 }
 
 export class article {
-      
-      title:string="";
-      description:string="";
-      content:string="";
-      category_id:string="";
-      status_id="";
-      thumbnail:string="";
-      video:string="";
+      id:number =1
+      title: string =""
+      slug: string =""
+      thumbnail: any |null
+      description: string =""
+      created_at: string =""
+      author: string =""
+      category: string =""
 }
 
 export class savearticle {
-      
-      title:string="";
-      description:string="";
-      content:string="";
-      category_id:string="";
-      status_id="";
-      thumbnail:string="";
-      video:string="";
+      id:number =1
+      title: string =""
+      slug: string =""
+      thumbnail: any |null
+      description: string =""
+      created_at: string =""
+      author: string =""
+      category: string =""
+}
+
+export class statusarticle {
+      name_status:string =""
+      updated_at:string =""
+      created_at:string ="" 
+}
+
+export class savestatusarticle {
+      name_status:string =""
+      updated_at:string =""
+      created_at:string ="" 
 }
 
 

@@ -21,12 +21,10 @@ export class LoginComponent implements OnInit {
   onSubmit(formValue: { email: string; password: string; }){
     this.authservice.login(formValue.email,formValue.password).subscribe(
       (result) => {
-       console.log('login success', this.onSubmit)
        alert('Login Berhasil')
        this.route.navigate(['/admin/dashboard'])
       },
       (error) => {
-      console.log('Login failed:', error);
       alert('Email dan Password Tidak Terdaftar.');
       }
     )

@@ -18,7 +18,8 @@ import { RegisterComponent } from './register/register.component';
 })
 export class AuthService {
 
-  private TOKEN_KEY = 'CAREKIDS_TOKEN'
+  private readonly TOKEN_KEY = 'CAREKIDS_TOKEN'
+
   constructor(private http:HttpClient, private cookieservice:CookieService) {}
 
   login(email: string, password: string): Observable<any> {
@@ -57,7 +58,7 @@ export class AuthService {
   }
 
   removetoken():void{
-    localStorage.removeItem('token')
+    localStorage.removeItem(this.TOKEN_KEY)
   }
 
 }
