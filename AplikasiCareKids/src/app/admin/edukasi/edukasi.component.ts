@@ -7,36 +7,30 @@ import { AdminService } from '../admin.service';
   templateUrl: './edukasi.component.html',
   styleUrls: ['./edukasi.component.css']
 })
-export class EdukasiComponent implements OnInit {
+export class EdukasiComponent  implements OnInit{
 
-  judul: string = 'POSTINGAN EDUKASI'
-  listarticle: any;
+  judul : string = 'POSTINGAN EDUKASI'
+  listarticle : any
 
-  constructor(private _AdminService: AdminService) { }
+  constructor( private _AdminService : AdminService){}
 
   ngOnInit(): void {
-    this.getListArticle()
+    this.getlistarticle()
   }
 
-  getListArticle() {
-    this._AdminService.listArticle().subscribe((response: any) => {
+  getlistarticle(){
+    this._AdminService.listarticle().subscribe(response => {
       this.listarticle = response.data
-      console.warn(this.listarticle)
+      console.log(this.listarticle)
     })
   }
 
-  // getlistarticle() {
-  //   this._AdminService.listarticle().subscribe(response => {
-  //     this.listarticle = response.data
-  //     })
-  // }
-
-  deletearticle(articleId: number) {
+  deletearticle(articleId : number){
     this._AdminService.deletearticle(articleId).subscribe(response => {
-      if (response.status == 200) {
-        alert("Berhasil Menghapus Data")
+      if(response.status == 200){
+        alert ("Berhasil Menghapus Data")
       } else {
-        alert("Gagal Menghapus Data")
+        alert ("Gagal Menghapus Data")
       }
     })
   }
