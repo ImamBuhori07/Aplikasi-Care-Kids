@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { Admin , article, Category , savearticle, saveCategory, savestatusarticle, statusarticle} from './admin.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Admin, article, Category, savearticle, saveCategory, savestatusarticle, statusarticle } from './admin.model';
 import { environment } from 'src/environments/environment';
 
 
@@ -13,8 +13,8 @@ export class AdminService {
 
     constructor(private http:HttpClient){}
 
-    listarticle(){
-      return this.http.get<article[]>(`${environment.baseUrl}api/article`)
+  listArticle() {
+    return this.http.get<article[]>(`${environment.baseUrl}/api/article`)
     }
 
     savearticle(article: savearticle){

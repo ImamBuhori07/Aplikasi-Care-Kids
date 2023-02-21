@@ -10,7 +10,7 @@ import { AdminService } from '../admin.service';
 export class EdukasiComponent  implements OnInit{
 
   judul : string = 'POSTINGAN EDUKASI'
-  listarticle : any
+  listarticle : any ;
 
   constructor( private _AdminService : AdminService){}
 
