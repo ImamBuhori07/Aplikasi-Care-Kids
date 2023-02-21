@@ -51,6 +51,7 @@ nav ul li a {
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 nav ul li a:hover {
@@ -125,7 +126,7 @@ display: none;
     }
 
     ng-sidebar ul li{
-        display: block; 
+        display: block;
         margin-left: 50px;
         margin-top: 5px;
     }
@@ -174,7 +175,7 @@ display: none;
     nav ul li a {
         font-size: 14px;
     }
-    
+
     ng-sidebar ul li{
         margin-left: 20px;
     }
