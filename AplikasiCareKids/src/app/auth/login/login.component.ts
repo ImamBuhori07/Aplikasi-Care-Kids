@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
-import { first } from 'rxjs';
-import { Auth,login } from '../auth.model';
-import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+//service
+import { AuthService } from '../services/auth.service';
+
+//class
+import { Login } from '../classes/login';
+
 
 @Component({
   selector: 'app-login',
@@ -12,25 +16,27 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required)
+  });
+  constructor(private loginData: AuthService, private router: Router) { }
 
-  constructor(private authservice:AuthService, private cookieservice :CookieService , private route : Router){}
+  ngOnInit() {
+  }
 
-    ngOnInit(): void {}
+  onSubmit(loginForm: Login) {
+    if (this.loginForm.invalid) {
+      return;
+    }
 
-    onSubmit(formValue: { email: string; password: string; }){
-      this.authservice.login(formValue.email,formValue.password).pipe(first()).subscribe(
-        (result) => {
-        alert('Login Berhasil')
-        this.route.navigate(['/admin/dashboard'])
-        },
-        (error) => {
-        alert('Email dan Password Tidak Terdaftar.');
-      }
-    )
+
+    this.loginData.postLogin(loginForm).subscribe((res: any) => {
+      localStorage.setItem('token', res.access_token);
+      this.router.navigate(['/admin/dashboard']);
+    })
+
   }
 
 
 }
-
-
-

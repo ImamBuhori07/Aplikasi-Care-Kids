@@ -1,14 +1,16 @@
-import { Component, NgModule } from '@angular/core';
-import { RouterModule, Routes, CanActivate } from '@angular/router';
+
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PesanComponent } from './pesan/pesan.component';
+import { IsAuthGuard } from '../auth/is-auth.guard';
 
 export const routes: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
 
   {
@@ -18,27 +20,30 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent,
-    
+        title: 'Dashboard | Admin',
+        canActivate: [IsAuthGuard]
+
       },
 
       {
         path: 'berita',
-        loadChildren: () => import ('./berita/berita.module'). then(m =>m.BeritaModule)
+        loadChildren: () => import('./berita/berita.module').then(m => m.BeritaModule),
+        canActivate: [IsAuthGuard]
       },
 
       {
         path: 'edukasi',
-        loadChildren: () => import('./edukasi/edukasi.module').then(m => m.EdukasiModule)
+        loadChildren: () => import('./edukasi/edukasi.module').then(m => m.EdukasiModule),
+        canActivate: [IsAuthGuard]
       },
 
       {
         path: 'pesan',
-        component: PesanComponent
+        component: PesanComponent,
+        title: 'Pesan',
+        canActivate: [IsAuthGuard]
       },
-
-  
     ]
-
   }
 ];
 

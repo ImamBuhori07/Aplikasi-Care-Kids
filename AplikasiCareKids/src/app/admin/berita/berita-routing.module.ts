@@ -3,25 +3,31 @@ import { RouterModule, Routes } from '@angular/router';
 import { BeritaComponent } from './berita.component';
 import { TambahpostinganComponent } from './tambahpostingan/tambahpostingan.component';
 
+import { IsAuthGuard } from 'src/app/auth/is-auth.guard';
+
 const routes: Routes = [
 
   {
-    path:'',
-    component:BeritaComponent,
+    path: '',
+    component: BeritaComponent,
     children: [
-    {
-      path:'berita',
-      component:BeritaComponent,
-    },
-    {
-      path:'tambahpostingan',
-      component:TambahpostinganComponent
-    }
-      
+      {
+        path: 'berita',
+        component: BeritaComponent,
+        title: 'Berita',
+        canActivate: [IsAuthGuard]
+      },
+      {
+        path: 'tambahpostingan',
+        component: TambahpostinganComponent,
+        title: 'Berita | Tambah Postingan',
+        canActivate: [IsAuthGuard]
+      }
+
     ]
   }
 
- 
+
 ];
 
 @NgModule({
