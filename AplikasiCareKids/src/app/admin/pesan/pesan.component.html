@@ -1,7 +1,7 @@
 <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="text-center fw-bold" style="font-size: 42px;">PESAN MASUKK</h2>
+                <h2 class="text-center fw-bold" style="font-size: 42px;">PESAN MASUK</h2>
                 <table class="table table-bordered">
                     <thead>
                       <tr>
@@ -10,20 +10,23 @@
                         <th scope="col">Email</th>
                         <th scope="col">Nomor Telepon</th>
                         <th scope="col">Pesan</th>
+                        <th scope="col">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <!-- <tr *ngFor="let data of messages">
-                        <th scope="row">{{data.no}}</th>
+                      <tr *ngFor="let data of pesan">
+                        <td scope="row"></td>
                         <td>{{data.nama}}</td>
                         <td>{{data.email}}</td>
                         <td>{{data.phone}}</td>
                         <td>{{data.pesan}}</td>
-                      </tr> -->
+                        <td align="center">
+                          <button class="btn btn-danger btn-sm me-2 ">Hapus</button>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
             </div>
         </div>
 </div>
 
-  

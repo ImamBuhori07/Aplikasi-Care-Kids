@@ -4,25 +4,46 @@
     padding-bottom: 30px;
 }
 
+.table{
+  counter-reset: rowNumber;
+}
 table {
+
     border-collapse: collapse;
     width: 100%;
   }
-  
+
   th, td {
     text-align: left;
     padding: 8px;
   }
-  
+
   th {
     background-color: #f2f2f2;
   }
-  
+
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
-  
+
   tr:hover {
     background-color: #ddd;
   }
-  
+
+.table>tbody tr {
+  counter-increment: rowNumber;
+}
+
+.table>tbody tr td:first-child::before {
+  content: counter(rowNumber);
+}
+
+.btn{
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
