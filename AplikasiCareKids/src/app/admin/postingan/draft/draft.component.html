@@ -8,9 +8,10 @@
         <thead>
             <tr>
                 <th scope="col" width="20px">No</th>
-                <th scope="col" width="500px">Postingan</th>
+                <th scope="col" width="250px">Postingan</th>
                 <th scope="col" width="20px">Category</th>
-                <th scope="col" width="170px">Aksi</th>
+                <th scope="col" width="20px">Tanggal</th>
+                <th scope="col" width="140px">Aksi</th>
             </tr>
         </thead>
         <tbody *ngFor="let data of draft">
@@ -18,6 +19,7 @@
                 <td align="center"></td>
                 <td>{{ data.title }}</td>
                 <td align="center">{{ data.category }}</td>
+                <td align="center">{{ data.created_at }}</td>
                 <td align="center">
                     <button class="btn btn-success btn-sm me-2">Detail</button>
                     <button class="btn btn-warning btn-sm me-2">Edit</button>

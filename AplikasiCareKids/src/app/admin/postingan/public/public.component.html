@@ -2,7 +2,7 @@
   <nav class="navbar navbar-light bg-light">
     <form>
       <!-- [(ngModel)]="searchText" (input)="search(searchText)" -->
-      <input class="search" name="search" type="search" placeholder="Cari . . ." required >
+      <input class="search" name="search" type="search" placeholder="Cari . . ." required [(ngModel)]="searchText" (input)="search(searchText)" >
     </form>
     <div>
       <button class="btn-add btn-primary my-2 my-sm-0" routerLink="add">Tambah</button>
@@ -12,9 +12,9 @@
     <thead>
       <tr>
         <th scope="col" width="20px">No</th>
-        <th scope="col" width="450px">Postingan</th>
+        <th scope="col" width="300px">Postingan</th>
         <th scope="col" width="50px">Kategori</th>
-        <th scope="col" width="20px">Dilihat</th>
+        <th scope="col" width="50px">Tanggal</th>
         <th scope="col" width="60px">Aksi</th>
       </tr>
     </thead>
@@ -23,10 +23,10 @@
         <td align=" center"></td>
         <td>{{ data.title }}</td>
         <td>{{ data.category }}</td>
-        <td align="center">{{ data.view_count }}</td>
+        <td>{{ data.created_at }}</td>
         <td align="center">
           <!-- routerLink="edit/{{ data.id }}" -->
-          <button class="btn btn-success btn-sm me-2"><a >Edit</a></button>
+          <button class="btn btn-success btn-sm me-2"><a routerLink="edit/{{ data.id }}">Edit</a></button>
           <button (click)="deletePostingan(data.id)" class="btn btn-danger btn-sm me-2 ">Hapus</button>
         </td>
       </tr>

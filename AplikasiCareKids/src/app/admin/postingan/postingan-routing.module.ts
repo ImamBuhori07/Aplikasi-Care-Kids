@@ -7,7 +7,7 @@ import { PublicComponent } from './public/public.component';
 import { DraftComponent } from './draft/draft.component';
 import { TrashComponent } from './trash/trash.component';
 import { AddComponent } from './add/add.component';
-// import { EditComponent } from './edit/edit.component';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   {
@@ -41,11 +41,11 @@ const routes: Routes = [
     component: AddComponent,
     title: 'Tambah Postingan'
   },
-  // {
-  //   path: 'public/edit/:id',
-  //   component: EditComponent,
-  //   title: 'Edit Postingan'
-  // }
+  {
+    path: 'public/edit/:id',
+    component: EditComponent,
+    title: 'Edit Postingan'
+  }
 ];
 
 @NgModule({

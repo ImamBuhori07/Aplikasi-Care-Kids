@@ -1,9 +1,9 @@
 <div class="container">
     <nav class="navbar navbar-light bg-light">
         <form class="form-inline">
-          <!-- [(ngModel)]="searchText"
-            (input)="search(searchText)" -->
-          <input class="search" name="search" type="search" placeholder="Cari . . ." required >
+          <!--  -->
+          <input class="search" name="search" type="search" placeholder="Cari . . ." required [(ngModel)]="searchText"
+            (input)="search(searchText)">
         </form>
     </nav>
     <table class="table table-bordered">
