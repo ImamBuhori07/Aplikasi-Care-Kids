@@ -1,1 +1,41 @@
-ok
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card">
+                <div class="header">
+                    <h3 class="text-center" style="font-size: 42px;">TAMBAH POSTINGAN</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="addForm">
+                        <div class="form-group mb-4">
+                            <label for="title">Judul</label>
+                            <input type="text" class="form-control" id="title"  formControlName="title" placeholder="Masukkan judul">
+                          </div>
+                        <div class="form-group mb-4">
+                            <label for="content">Deskripsi</label>
+                            <textarea class="form-control" id="description" rows="10"  formControlName="description"placeholder="Masukkan sesuatu"></textarea>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="category">Kategori</label>
+                            <select class="form-control" id="category">
+                              <option value="2">Edukasi</option>
+                              <option value="1">Berita</option>
+                            </select>
+                          </div>
+                          <div class="form-group mb-4">
+                            <label for="content">Isi Konten</label>
+                            <textarea class="form-control" id="content" rows="10"  formControlName="description"placeholder="Masukkan sesuatu"></textarea>
+                        </div>
+                          <div class="form-group mb-4">
+                            <label for="image">Gambar Postingan</label>
+                            <input type="file" class="form-control-file" formControlName="thumbnail" id="image">
+                          </div>
+                          <button type="submit" class="btn btn-primary mr-2" (click)="addPostPublic()">Terbitkan</button>
+                         <button type="submit" class="btn btn-secondary" (click)="addPostDraft()">Simpan sebagai Draft</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
