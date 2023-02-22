@@ -5,7 +5,6 @@ import { BeritaComponent } from './berita/berita.component';
 import { EdukasiComponent } from './edukasi/edukasi.component';
 import { PesanComponent } from './pesan/pesan.component';
 import { AdminComponent } from './admin.component';
-import { TambahpostinganComponent } from './tambahpostingan/tambahpostingan.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -18,7 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EdukasiComponent,
     PesanComponent,
     AdminComponent,
-    TambahpostinganComponent
+  
   ],
   imports: [
     CommonModule,

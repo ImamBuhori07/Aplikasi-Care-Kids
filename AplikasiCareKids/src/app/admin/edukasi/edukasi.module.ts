@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EdukasiRoutingModule } from './edukasi-routing.module';
-
 import { TambahpostinganComponent } from './tambahpostingan/tambahpostingan.component';
 
 
@@ -16,7 +14,8 @@ import { TambahpostinganComponent } from './tambahpostingan/tambahpostingan.comp
   imports: [
     CommonModule,
     EdukasiRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class EdukasiModule { }
