@@ -24,7 +24,12 @@ import { SearchPipe } from "./search.pipe";
 
 @NgModule({
   declarations: [
-
+    PostinganComponent,
+    PublicComponent,
+    DraftComponent,
+    TrashComponent,
+    AddComponent,
+    // EditComponent,
     SearchPipe
   ],
 
