@@ -17,7 +17,7 @@ export class TambahpostinganComponent implements OnInit {
   formarticle: FormGroup
   category: [] = []
   articleId: number = 1
-  listcategory: import("d:/Bootcamp/Angular/Aplikasi-Care-Kids/AplikasiCareKids/src/app/admin/admin.model").Category[] | undefined;
+  // listcategory: import("d:/Bootcamp/Angular/Aplikasi-Care-Kids/AplikasiCareKids/src/app/admin/admin.model").Category[] | undefined;
 
   constructor(
     private _AdminService: AdminService,
@@ -41,7 +41,7 @@ export class TambahpostinganComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ListCategory();
+    // this.ListCategory();
 
     this._Activatedroute.params.subscribe(route => {
       this.articleId = route['id'];
@@ -58,11 +58,11 @@ export class TambahpostinganComponent implements OnInit {
     });
   }
 
-  ListCategory() {
-    this._AdminService.listcategory().subscribe(response => {
-      this.listcategory = response;
-    });
-  }
+  // ListCategory() {
+  //   this._AdminService.listcategory().subscribe(response => {
+  //     this.listcategory = response;
+  //   });
+  // }
 
   save() {
     let article: savearticle = this.formarticle.value;
@@ -72,13 +72,13 @@ export class TambahpostinganComponent implements OnInit {
       this._AdminService.Updatearticle(article).subscribe((response: any) => {
         if (response.status == 200) {
           alert("Berhasil Edit Data");
-          this._router.navigate(['/','edukasi']);
+          this._router.navigate(['/', 'edukasi']);
         } else {
           alert('Gagal Mengupdate Data');
         }
       });
     } else {
-      this._AdminService.savearticle(article).subscribe((response:any) => {
+      this._AdminService.savearticle(article).subscribe((response: any) => {
         if (response.status == 200) {
           alert("Berhasil Menyimpan Data");
         } else {
