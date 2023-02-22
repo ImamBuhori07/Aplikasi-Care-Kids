@@ -4,31 +4,43 @@
       <div class="row">
         <div class="col-12">
           <h2 class="text-center fw-bold" style="font-size: 42px;">{{judul}}</h2>
-          <div class="Status-Post">
-            <span class="text-decoration-none Publish">Diterbitkan</span>
-            <span class="text-decoration-none Draft">Draft</span>
-            <span class="text-decoration-none Trash">Sampah</span>
-          </div>
-          <form class="d-flex" role="search" id="cari">
-            <input class="form-control me-2 w-100 h-50" type="search" placeholder="Search" aria-label="Search">
-            <a href=""><i class="bi bi-search fa-2x"></i></a>
-          </form>
-          <button class="btn btn-success" id="Add" routerLink="">Tambah</button>
+           <div class="card">
+            <div class="Status-Post">
+              <a routerLink="" class="text-decoration-none Publish">Diterbitkan</a>
+              <a routerLink="" class="text-decoration-none Draft">Draft</a>
+              <a routerLink="" class="text-decoration-none Trash">Sampah</a>
+            </div>
+            <form class="d-flex" role="search" id="cari">
+              <input class="form-control me-2 w-100 h-50" type="search" placeholder="Search" aria-label="Search">
+              <a href=""><i class="bi bi-search fa-2x"></i></a>
+            </form>
+            <button class="btn btn-success btn-sm" id="Add" routerLink="/tambahpostingan">Tambah</button>
+           
           <table class="table table-bordered">
             <thead class="text-center" style="color: #fafafa; background: royalblue;">
               <tr>
                 <th>No</th>
                 <th>Judul</th>
                 <th>Kategori</th>
-                <th>Isi Postingan</th>
                 <th>Tanggal</th>
                 <th class="text-center">Aksi</th>
               </tr>
             </thead>
             <tbody class="text-center" id="table-body">
-              <!-- Data inputan dari form tambah postingan akan muncul di sini -->
+              <tr *ngFor="let item of listarticle; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.category}}</td>
+                <td>{{item.created_at}}</td>
+                <td>
+                  <button class="btn btn-success btn-sm me-2">Edit</button>
+                  <button class="btn btn-danger  btn-sm me-2" (click)="deletearticle(item.article)">Hapus</button>
+                  <button class="btn btn-warning  btn-sm">Detail</button>
+                </td>
+              </tr>
             </tbody>
           </table>
+        </div>
         </div>
       </div>
     </div>

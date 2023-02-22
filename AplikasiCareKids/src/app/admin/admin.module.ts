@@ -7,7 +7,7 @@ import { PesanComponent } from './pesan/pesan.component';
 import { AdminComponent } from './admin.component';
 import { TambahpostinganComponent } from './tambahpostingan/tambahpostingan.component';
 import { AdminRoutingModule } from './admin-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -23,7 +23,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }
