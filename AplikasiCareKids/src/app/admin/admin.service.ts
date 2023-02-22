@@ -54,9 +54,13 @@ export class AdminService {
     headers = headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'));
     return this.http.get(this.pesan, { headers: headers });
   }
-  //end dashboard
 
-  //edukasi
+  delPesan(id: any) {
+    let headers = new HttpHeaders();
+    headers = headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+    return this.http.delete(this.pesan + '/' + id, { headers: headers });
+  }
+
   getEdukasi() {
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'));

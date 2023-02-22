@@ -29,4 +29,10 @@ export class PesanComponent {
     });
   }
 
+  delPesan(id: any) {
+    this.adminService.delPesan(id).subscribe((res: any) => {
+      this.getpesan();
+    });
+  }
+
 }
