@@ -1,11 +1,12 @@
 <div class="container">
     <div class="row">
       <div class="col-lg-12 mx-auto">
-        <div class="welcome-text mb-5">
-          <h1 class="fw-bold" style="font-size: 52px;">Selamat Datang <br> Hesky Ramadhan</h1>
-          <p class="fw-bold mb-4" style="font-size: 32px;">Statistik</p>
+        <div class="welcome-text mb-5" *ngFor="let data of profile">
+          <h1 class="fw-bold" style="font-size: 52px;">Selamat Datang</h1>
+          <h3 class="fw-bold" style="font-size: 35px;">{{ data.full_name }}</h3>
+          <p class="fw-bold mb-4" style="font-size: 24px;">Statistik</p>
         </div>
-        <div class="row g-4">
+        <div class="row g-4" *ngIf="visitor">
           <div class="col-md-4">
             <div class="card h-100 visitor-box p-3 bg-primary">
               <div class="d-flex align-items-center mb-3">
@@ -13,34 +14,33 @@
                 <h4 class="text-white ms-3 mb-0">Pengunjung</h4>
               </div>
               <div class="card-body text-center">
-                <h2 class="text-white mb-0 fw-bold">0</h2>
+                <h2 class="text-white mb-0 fw-bold">{{ visitor }}</h2>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" *ngIf="comment">
             <div class="card h-100 comment-box p-3 bg-primary">
               <div class="d-flex align-items-center mb-3">
                 <i class="bi bi-chat-left-fill fa-2x text-white"></i>
                 <h4 class="text-white ms-3 mb-0">Komentar</h4>
               </div>
               <div class="card-body text-center">
-                <h2 class="text-white mb-0 fw-bold">0</h2>
+                <h2 class="text-white mb-0 fw-bold">{{ totalcomment }}</h2>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" *ngIf="pesan">
             <div class="card h-100 message-box p-3 bg-primary">
               <div class="d-flex align-items-center mb-3">
                 <i class="bi bi-chat-fill fa-2x text-white"></i>
                 <h4 class="text-white ms-3 mb-0">Pesan</h4>
               </div>
               <div class="card-body text-center">
-                <h2 class="text-white mb-0 fw-bold">0</h2>
+                <h2 class="text-white mb-0 fw-bold">{{ totalpesan }}</h2>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
-  
