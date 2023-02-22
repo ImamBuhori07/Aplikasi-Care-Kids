@@ -27,7 +27,7 @@ export class EdukasiComponent  implements OnInit{
   }
 
   deletearticle(articleId : number){
-    this._AdminService.deletearticle(articleId).subscribe(response => {
+    this._AdminService.deletearticle(articleId).subscribe((response) => {
       if(response.status == 200){
         alert ("Berhasil Menghapus Data")
         location.reload()
