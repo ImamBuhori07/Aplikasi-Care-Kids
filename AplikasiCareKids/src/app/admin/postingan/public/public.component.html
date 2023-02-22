@@ -18,7 +18,7 @@
         <th scope="col" width="60px">Aksi</th>
       </tr>
     </thead>
-    <tbody *ngFor="let data of postingan">
+    <tbody *ngFor="let data of postingan | paginate: { itemsPerPage: 15, currentPage: page } | search: searchText; index as i">
       <tr>
         <td align=" center"></td>
         <td>{{ data.title }}</td>
@@ -32,7 +32,7 @@
       </tr>
     </tbody>
   </table>
-  <!-- <div>
+  <div>
     <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
-  </div> -->
+  </div>
 </div>

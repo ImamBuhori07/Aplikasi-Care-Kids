@@ -14,7 +14,7 @@
                 <th scope="col" width="200px">Aksi</th>
             </tr>
         </thead>
-        <tbody *ngFor="let data of trash">
+        <tbody *ngFor="let data of trash | paginate: { itemsPerPage: 15, currentPage: page } | search: searchText; index as i">
             <tr>
                 <td align="center"></td>
                 <td>{{ data.title }}</td>
@@ -25,7 +25,7 @@
             </tr>
         </tbody>
     </table>
-    <!-- <div>
+    <div>
         <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
-    </div> -->
+    </div>
 </div>
