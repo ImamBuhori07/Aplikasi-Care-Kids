@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { TambahpostinganComponent } from './tambahpostingan/tambahpostingan.component';
 import { EdukasiComponent } from './edukasi.component';
 
+import { IsAuthGuard } from 'src/app/auth/is-auth.guard';
+
 export const routes: Routes = [
   {
     path: '',
@@ -10,11 +12,15 @@ export const routes: Routes = [
     children: [
       {
         path: 'edukasi',
-        component: EdukasiComponent
+        component: EdukasiComponent,
+        title: 'Edukasi',
+        canActivate: [IsAuthGuard]
       },
       {
         path: 'tambahpostingan',
-        component: TambahpostinganComponent
+        component: TambahpostinganComponent,
+        title: 'Edukasi | Tambah Postingan',
+        canActivate: [IsAuthGuard]
       }
     ]
   }
