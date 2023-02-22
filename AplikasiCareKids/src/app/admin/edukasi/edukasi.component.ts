@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { response } from 'express';
-import { article, Category } from '../admin.model';
 import { AdminService } from '../admin.service';
 
 @Component({
@@ -8,33 +6,42 @@ import { AdminService } from '../admin.service';
   templateUrl: './edukasi.component.html',
   styleUrls: ['./edukasi.component.css']
 })
-export class EdukasiComponent  implements OnInit{
+export class EdukasiComponent implements OnInit {
 
-  judul : string = 'POSTINGAN EDUKASI'
-  listarticle : any ;
+  judul: string = 'POSTINGAN EDUKASI'
 
-  constructor( private _AdminService : AdminService){}
+  postingan: any;
+
+  constructor(private _AdminService: AdminService) { }
 
   ngOnInit(): void {
-    this.getListArticle()
+    this.getEdukasi();
+    // this.getListArticle()
   }
 
-  getListArticle(){
-    this._AdminService.listArticle().subscribe((response: any) => {
-      this.listarticle = response.data
-      console.warn(this.listarticle)
+  getEdukasi() {
+    this._AdminService.getEdukasi().subscribe((response: any) => {
+      this.postingan = response.data
+      console.warn(this.postingan)
     })
   }
 
-  deletearticle(articleId : number){
-    this._AdminService.deletearticle(articleId).subscribe((response) => {
-      if(response.status == 200){
-        alert ("Berhasil Menghapus Data")
-        location.reload()
-      } else {
-        alert ("Gagal Menghapus Data")
-      }
-    })
-  }
+  // getListArticle() {
+  //   this._AdminService.listArticle().subscribe((response: any) => {
+  //     this.listarticle = response.data
+  //     console.warn(this.listarticle)
+  //   })
+  // }
+
+  // deletearticle(articleId: number) {
+  //   this._AdminService.deletearticle(articleId).subscribe((response) => {
+  //     if (response.status == 200) {
+  //       alert("Berhasil Menghapus Data")
+  //       location.reload()
+  //     } else {
+  //       alert("Gagal Menghapus Data")
+  //     }
+  //   })
+  // }
 
 }
