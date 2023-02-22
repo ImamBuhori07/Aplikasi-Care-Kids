@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyinterceptorInterceptor } from './auth/myinterceptor.interceptor';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,7 @@ import { MyinterceptorInterceptor } from './auth/myinterceptor.interceptor';
   
 
   ],
-  providers: [
+  providers: [ 
     {
       provide: HTTP_INTERCEPTORS,
       useClass: MyinterceptorInterceptor,

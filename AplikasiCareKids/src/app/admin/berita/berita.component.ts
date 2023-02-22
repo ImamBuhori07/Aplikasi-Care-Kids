@@ -1,27 +1,34 @@
+import { response } from 'express';
 import { Component, OnInit } from '@angular/core';
-import { Router } from 'express';
-import { article } from '../admin.model';
+import { Article } from '../admin.model';
 import { AdminService } from '../admin.service';
+
+
 @Component({
   selector: 'app-berita',
   templateUrl: './berita.component.html',
   styleUrls: ['./berita.component.css']
 })
-export class BeritaComponent implements OnInit{
 
 
-  searchTitle: string = '';
-  article: article[] = [];
-  searchterm: any;
+export class BeritaComponent implements OnInit {
 
-  constructor (private adminservice : AdminService){}
+        judul : string = 'POSTINGAN'
+        data : any ;
+        Article!: Article[];
 
-  ngOnInit(): void {
-      
-  }
+        constructor (private _AdminService : AdminService){}
+
+        
+        ngOnInit(): void {}
 
 
+        // GetArticle(){
+        //   this._AdminService.AddArticle().subscribe(response => {
+        //     this.Article = response.data
+        //   })
+        // }
 
- 
+
 
 }
