@@ -15,12 +15,12 @@ export const routes: Routes = [
   },
 
   {
-    path:'',
+    path: '',
     component: AdminComponent,
-    children : [
+    children: [
       {
         path: 'dashboard',
-       component: DashboardComponent,
+        component: DashboardComponent,
       },
 
       {
@@ -29,17 +29,17 @@ export const routes: Routes = [
       },
 
       {
-        path:'edukasi',
-        component: EdukasiComponent
+        path: 'edukasi',
+        loadChildren: () => import('./edukasi/edukasi.module').then(m => m.EdukasiModule)
       },
 
       {
-        path:'pesan',
+        path: 'pesan',
         component: PesanComponent
       },
 
       {
-        path:"tambahpostingan",
+        path: "tambahpostingan",
         component: TambahpostinganComponent
       }
     ]
