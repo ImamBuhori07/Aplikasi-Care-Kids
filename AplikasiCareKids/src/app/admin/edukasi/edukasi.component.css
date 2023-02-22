@@ -41,6 +41,7 @@ table {
   
   .btn-success {
     margin-top: 10px;
+    width: 100px;
     background-color: green;
     color: white;
   }
@@ -53,6 +54,10 @@ table {
   .btn-warning {
     background-color: orange;
     color: white;
+  }
+
+  .card {
+    padding: 30px;
   }
   
 .Publish {
@@ -67,6 +72,5 @@ table {
 
 #cari {
     width: 350px;
-    position: absolute ;
-    margin-left: 760px;
+    margin-left: 720px;
 }

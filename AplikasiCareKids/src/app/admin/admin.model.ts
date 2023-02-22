@@ -30,10 +30,11 @@ export class article {
       created_at: string =""
       author: string =""
       category: string =""
+  static articleId: any
 }
 
 export class savearticle {
-      id:number =1
+      articleId!: number
       title: string =""
       slug: string =""
       thumbnail: any |null
@@ -41,6 +42,7 @@ export class savearticle {
       created_at: string =""
       author: string =""
       category: string =""
+  
 }
 
 export class statusarticle {
