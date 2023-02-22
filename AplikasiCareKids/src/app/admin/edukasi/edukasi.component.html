@@ -25,15 +25,15 @@
                 <th class="text-center">Aksi</th>
               </tr>
             </thead>
-            <tbody class="text-center" id="table-body">
-              <tr *ngFor="let item of listarticle; let i = index">
-                <td>{{i + 1}}</td>
-                <td>{{item.title}}</td>
-                <td>{{item.category}}</td>
-                <td>{{item.Tanggal</td>
+            <tbody class="text-center" id="table-body" *ngFor="let data of postingan">
+              <tr>
+                <td>{{ data.id }}</td>
+                <td>{{ data.title }}</td>
+                <td>{{ data.category }}</td>
+                <td>{{ data.created_at }}</td>
                 <td>
                   <button class="btn btn-success btn-sm me-2">Edit</button>
-                  <button class="btn btn-danger  btn-sm me-2" (click)="deletearticle(item.article)">Hapus</button>
+                  <button class="btn btn-danger  btn-sm me-2">Hapus</button>
                   <button class="btn btn-warning  btn-sm">Detail</button>
                 </td>
               </tr>

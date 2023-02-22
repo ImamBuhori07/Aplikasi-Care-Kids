@@ -20,7 +20,7 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent,
-        title: 'Dashboard | Admin',
+        title: 'Dashboard',
         canActivate: [IsAuthGuard]
 
       },

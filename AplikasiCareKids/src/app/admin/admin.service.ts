@@ -16,6 +16,8 @@ export class AdminService {
   comment = 'http://127.0.0.1:8000/api/comment';
   pesan = 'http://localhost:8000/api/contact';
 
+  edukasi = 'http://127.0.0.1:8000/api/article/category/2';
+
 
   constructor(private http: HttpClient) {
     this.getVisitor();
@@ -47,6 +49,16 @@ export class AdminService {
     headers = headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'));
     return this.http.get(this.pesan, { headers: headers });
   }
+  //end dashboard
+
+  //edukasi
+  getEdukasi() {
+    let headers = new HttpHeaders();
+    headers = headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+    return this.http.get(this.edukasi, { headers: headers });
+  }
+
+  //end edukasi
 
 
   savearticle(article: savearticle) {
