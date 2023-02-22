@@ -1,0 +1,38 @@
+<div class="container">
+  <nav class="navbar navbar-light bg-light">
+    <form>
+      <!-- [(ngModel)]="searchText" (input)="search(searchText)" -->
+      <input class="search" name="search" type="search" placeholder="Cari . . ." required >
+    </form>
+    <div>
+      <button class="btn-add btn-primary my-2 my-sm-0" routerLink="add">Tambah</button>
+    </div>
+  </nav>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col" width="20px">No</th>
+        <th scope="col" width="450px">Postingan</th>
+        <th scope="col" width="50px">Kategori</th>
+        <th scope="col" width="20px">Dilihat</th>
+        <th scope="col" width="60px">Aksi</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let data of postingan">
+      <tr>
+        <td align=" center"></td>
+        <td>{{ data.title }}</td>
+        <td>{{ data.category }}</td>
+        <td align="center">{{ data.view_count }}</td>
+        <td align="center">
+          <!-- routerLink="edit/{{ data.id }}" -->
+          <button class="btn btn-success btn-sm me-2"><a >Edit</a></button>
+          <button (click)="deletePostingan(data.id)" class="btn btn-danger btn-sm me-2 ">Hapus</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <div>
+    <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+  </div> -->
+</div>

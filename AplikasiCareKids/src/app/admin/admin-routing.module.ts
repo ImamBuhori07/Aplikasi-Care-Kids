@@ -25,15 +25,21 @@ export const routes: Routes = [
 
       },
 
-      {
-        path: 'berita',
-        loadChildren: () => import('./berita/berita.module').then(m => m.BeritaModule),
-        canActivate: [IsAuthGuard]
-      },
+      // {
+      //   path: 'berita',
+      //   loadChildren: () => import('./berita/berita.module').then(m => m.BeritaModule),
+      //   canActivate: [IsAuthGuard]
+      // },
+
+      // {
+      //   path: 'edukasi',
+      //   loadChildren: () => import('./edukasi/edukasi.module').then(m => m.EdukasiModule),
+      //   canActivate: [IsAuthGuard]
+      // },
 
       {
-        path: 'edukasi',
-        loadChildren: () => import('./edukasi/edukasi.module').then(m => m.EdukasiModule),
+        path: 'postingan',
+        loadChildren: () => import('./postingan/postingan.module').then(m => m.PostinganModule),
         canActivate: [IsAuthGuard]
       },
 

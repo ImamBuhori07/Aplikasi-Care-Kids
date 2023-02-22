@@ -1,0 +1,52 @@
+.container {
+    margin-top: 10px;;
+    background-color: rgb(243, 241, 240);
+    padding: 10px 20px 0 20px;
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.title h2 {
+    margin-left: 10px;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: 14px;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.row label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: 14px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

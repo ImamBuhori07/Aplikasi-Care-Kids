@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="title col-md-12">
+      <h2> Buat Postingan</h2>
+    </div>
+    <!-- (ngSubmit)="onSubmit(kirim.value) -->
+    <!-- [formGroup]="addForm" id="add-form" name="add-form" #kirim="ngForm" -->
+    <form >
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Judul</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Judul Postingan"
+          formControlName="title">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Deskripsi</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Deskripsi Postingan"
+          formControlName="description"></textarea>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="md-form mb-0">
+            <label for="exampleFormControlSelect1">Kategori Postingan</label>
+            <select class="form-control" id="exampleFormControlSelect1" formControlName="category_id">
+              <option disabled>~Pilihan~</option>
+              <option value="1">Berita</option>
+              <option value="2">Edukasi</option>
+            </select>
+          </div>
+        </div>
+        <!-- <div class="col-md-6">
+          <div class="md-form mb-0">
+            <label for="exampleFormControlFile1">Thumbnail</label><br>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" formControlName="thumbnail">
+          </div>
+        </div> -->
+        <!-- <div class="col-md-6">
+                <label for="exampleFormControlFile1">Thumbnail</label><br>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" formControlName="thumbnail">
+        </div> -->
+      </div>
+      <!-- <div class="form-group">
+        <angular-editor [placeholder]="'Tulis bro'" [config]="editorConfig" formControlName="content"></angular-editor>
+      </div> -->
+
+      <div class="button">
+        <button (click)="addPostPublic()" type="submit" class="btn btn-primary">Terbitkan</button>
+        <button (click)="addPostDraft()" type="submit" class="btn btn-success">Simpan</button>
+      </div>
+    </form>
+  </div>

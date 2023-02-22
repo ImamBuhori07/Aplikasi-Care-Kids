@@ -1,0 +1,31 @@
+<div class="container">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <!-- [(ngModel)]="searchText"
+            (input)="search(searchText)" -->
+          <input class="search" name="search" type="search" placeholder="Cari . . ." required >
+        </form>
+    </nav>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col" width="20px">No</th>
+                <th scope="col" width="500px">Postingan</th>
+                <th scope="col" width="200px">Aksi</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let data of trash">
+            <tr>
+                <td align="center"></td>
+                <td>{{ data.title }}</td>
+                <td align="center">
+                    <button (click)="restorePostingan(data.id)" class="btn btn-success btn-sm me-2">Kembalikan</button>
+                    <button (click)="deletePermanentPostingan(data.id)" class="btn btn-danger btn-sm me-2 ">Hapus Permanen</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <div>
+        <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+    </div> -->
+</div>

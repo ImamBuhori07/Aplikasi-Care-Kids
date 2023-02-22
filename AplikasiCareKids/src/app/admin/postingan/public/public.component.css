@@ -1,0 +1,67 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+}
+
+form .search {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.table {
+    width: 100%;
+    border-radius: 5px;
+    counter-reset: rowNumber;
+}
+
+.table>thead {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+}
+
+.table>tbody {
+    background-color: #fff;
+    color: #000;
+}
+
+.table>tbody tr {
+  counter-increment: rowNumber;
+}
+
+.table>tbody tr td:first-child::before {
+  content: counter(rowNumber);
+}
+
+.table>tbody>tr>td>button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.table>tbody>tr>td>button>a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400px;
+}
+
+.btn-add {
+    margin-right: 40px;
+    margin-bottom: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+    background: #3C6BC6;
+}
