@@ -1,7 +1,8 @@
 <div class="container">
     <nav class="navbar navbar-light bg-light">
         <form class="form-inline">
-          <input class="search" name="search" type="search" placeholder="Cari . . ." required>
+          <input class="search" name="search" type="search" placeholder="Cari . . ." required required [(ngModel)]="searchText"
+            (input)="search(searchText)">
         </form>
     </nav>
     <table class="table table-bordered">
@@ -14,7 +15,7 @@
                 <th scope="col" width="140px">Aksi</th>
             </tr>
         </thead>
-        <tbody *ngFor="let data of draft">
+        <tbody *ngFor="let data of draft | paginate: { itemsPerPage: 15, currentPage: page } | search: searchText; index as i">
             <tr>
                 <td align="center"></td>
                 <td>{{ data.title }}</td>
@@ -28,7 +29,7 @@
             </tr>
         </tbody>
     </table>
-    <!-- <div>
+    <div>
         <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
-    </div> -->
+    </div>
 </div>
